@@ -1,43 +1,46 @@
 // Simple viewer for Total 3D model
 
+
 'use strict';
 
+let uiData = {};
 let uiText = {};
+let currentLang = 'en';
+let isExploded = false;
 
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('main.json')
-    .then((response) => response.json())
-    .then((data) => {
-      uiText = data;
-      initUI();
-      setupLoadListener();
-    })
-    .catch((err) => {
-      console.error('Failed to load JSON:', err);
-      initUI();
-      setupLoadListener();
-    });
-});
+function detectLang() {
+  const navLang = navigator.language || navigator.userLanguage || 'en';
+  return navLang.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+}
 
-function initUI() {
-  const container = document.getElementById('full-page');
-  if (!container) return;
-  container.innerHTML = `
-  <viewer-container>
-    <model-viewer id="modelViewer"
-      alt="${uiText.viewer_alt || 'Total BESS model'}"
-      src="3Dmodel/V-TOTAL-011.glb"
-      ar
-      ar-modes="webxr scene-viewer quick-look"
-      camera-controls
-      environment-image="neutral"
-      exposure="1"
-      shadow-intensity="1"
-      shadow-softness="1">
-    </model-viewer>
-  </viewer-container>`;
+function applyLanguage(lang) {
+  uiText = uiData[lang] || {};
+  currentLang = lang;
+  updateUIText();
+  updateLangButton();
+}
 
+function setupLangToggle() {
+  const btn = document.getElementById('lang-toggle');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const newLang = currentLang === 'fr' ? 'en' : 'fr';
+    applyLanguage(newLang);
+  });
+  updateLangButton();
+}
+
+function updateLangButton() {
+  const btn = document.getElementById('lang-toggle');
+  if (btn) btn.textContent = currentLang === 'fr' ? 'EN' : 'FR';
+}
+
+function updateUIText() {
+  document.documentElement.lang = currentLang;
   if (uiText.page_title) document.title = uiText.page_title;
+
+  const modelViewer = document.getElementById('modelViewer');
+  if (modelViewer && uiText.viewer_alt) modelViewer.setAttribute('alt', uiText.viewer_alt);
 
   const brandLogo = document.getElementById('brand-logo');
   if (brandLogo && uiText.brand_logo_alt) brandLogo.alt = uiText.brand_logo_alt;
@@ -63,6 +66,85 @@ function initUI() {
   const loader = document.getElementById('loader-text');
   if (loader && uiText.loader_text) loader.textContent = uiText.loader_text;
 
+  const welcomeLabel = document.getElementById('welcomeModalLabel');
+  if (welcomeLabel && uiText.welcome_title) welcomeLabel.textContent = uiText.welcome_title;
+
+  const bullet1 = document.getElementById('welcome-bullet-1');
+  if (bullet1 && uiText.welcome_bullet_1) bullet1.textContent = uiText.welcome_bullet_1;
+
+  const bullet2 = document.getElementById('welcome-bullet-2');
+  if (bullet2 && uiText.welcome_bullet_2) bullet2.textContent = uiText.welcome_bullet_2;
+
+  const tagline = document.getElementById('welcome-tagline');
+  if (tagline && uiText.welcome_tagline) tagline.textContent = uiText.welcome_tagline;
+
+  const startBtn = document.getElementById('start-btn');
+  if (startBtn && uiText.start_button) startBtn.textContent = uiText.start_button;
+
+  const tutorialTitle = document.getElementById('tutorialModalLabel');
+  if (tutorialTitle && uiText.tutorial_title) tutorialTitle.textContent = uiText.tutorial_title;
+
+  const tutorialText = document.getElementById('tutorial-text');
+  if (tutorialText && uiText.tutorial_text) tutorialText.textContent = uiText.tutorial_text;
+
+  const tutorialBtn = document.getElementById('tutorial-close-btn');
+  if (tutorialBtn && uiText.tutorial_button) tutorialBtn.textContent = uiText.tutorial_button;
+
+  updateAnimButton();
+  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((el) => new bootstrap.Tooltip(el));
+}
+
+function updateAnimButton() {
+  const container = document.getElementById('anim-button');
+  if (!container) return;
+  if (isExploded) {
+    container.innerHTML = `<button type="button" class="btn btn-primary text-light fs-3" onclick="initialView()">
+        <span data-bs-toggle="tooltip" data-bs-placement="right" title="${uiText.initial_view_tooltip || 'initial-view'}"><i class="bi bi-box"></i></span>
+    </button>`;
+  } else {
+    container.innerHTML = `<button type="button" class="btn btn-primary text-light fs-3" onclick="separateView()">
+        <span id="tooltip-separate-view" data-bs-toggle="tooltip" data-bs-placement="right" title="${uiText.separate_view_tooltip || 'separate-view'}"><i class="bi bi-layers-half"></i></span>
+    </button>`;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('main.json')
+    .then((response) => response.json())
+    .then((data) => {
+      uiData = data;
+      currentLang = detectLang();
+      applyLanguage(currentLang);
+      initUI();
+      setupLoadListener();
+      setupLangToggle();
+    })
+    .catch((err) => {
+      console.error('Failed to load JSON:', err);
+      initUI();
+      setupLoadListener();
+    });
+});
+
+function initUI() {
+  const container = document.getElementById('full-page');
+  if (!container) return;
+  container.innerHTML = `
+  <viewer-container>
+    <model-viewer id="modelViewer"
+      alt="${uiText.viewer_alt || 'Total BESS model'}"
+      src="3Dmodel/V-TOTAL-011.glb"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      camera-controls
+      environment-image="neutral"
+      exposure="1"
+      shadow-intensity="1"
+      shadow-softness="1">
+    </model-viewer>
+  </viewer-container>`;
+  updateUIText();
+
   const infoBtn = document.getElementById('info-btn');
   if (infoBtn) {
     infoBtn.addEventListener('click', () => {
@@ -73,10 +155,6 @@ function initUI() {
       }
     });
   }
-
-  // Initialize all Bootstrap tooltips
-  const tooltipEls = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-  tooltipEls.forEach((el) => new bootstrap.Tooltip(el));
 }
 
 function setupLoadListener() {
@@ -137,14 +215,8 @@ async function separateView() {
   await modelViewer.updateComplete;
   modelViewer.timeScale = 1;
   await modelViewer.play({ repetitions: 1 });
-  $('#anim-button').html(
-    `<button type="button" class="btn btn-primary text-light fs-3" onclick="initialView()">
-        <span data-bs-toggle="tooltip" data-bs-placement="right" title="${uiText.initial_view_tooltip || 'initial-view'}"><i class="bi bi-box"></i></span>
-    </button>`
-  );
-  document
-    .querySelectorAll('[data-bs-toggle="tooltip"]')
-    .forEach((el) => new bootstrap.Tooltip(el));
+  isExploded = true;
+  updateAnimButton();
 }
 
 async function initialView() {
@@ -154,12 +226,6 @@ async function initialView() {
   await modelViewer.updateComplete;
   modelViewer.timeScale = 1;
   await modelViewer.play({ repetitions: 1 });
-  $('#anim-button').html(
-    `<button type="button" class="btn btn-primary text-light fs-3" onclick="separateView()">
-        <span data-bs-toggle="tooltip" data-bs-placement="right" title="${uiText.separate_view_tooltip || 'separate-view'}"><i class="bi bi-layers"></i></span>
-    </button>`
-  );
-  document
-    .querySelectorAll('[data-bs-toggle="tooltip"]')
-    .forEach((el) => new bootstrap.Tooltip(el));
+  isExploded = false;
+  updateAnimButton();
 }
