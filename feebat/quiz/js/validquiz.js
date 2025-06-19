@@ -176,15 +176,13 @@ function updateHotspotPosition(posNum) {
 $(document).ready(function () {
   //// get json data
 
-  let httpRequest = new XMLHttpRequest()
-  httpRequest.open('GET', model + '.json', true)
-  httpRequest.send()
-  httpRequest.addEventListener('readystatechange', function () {
-    if (this.readyState === this.DONE) {
-      jsonData = JSON.parse(this.response)
+  fetch(model + '.json')
+    .then((response) => response.json())
+    .then((data) => {
+      jsonData = data
       processJsonData()
-    }
-  })
+    })
+    .catch((err) => console.error('Failed to load JSON:', err))
 
   //// process json data
   function processJsonData() {
