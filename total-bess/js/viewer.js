@@ -96,7 +96,10 @@ function setupModals() {
         }
       });
     }
-    welcomeModal.show();
+    setTimeout(() => {
+      welcomeModal.show();
+      $('#overlay').fadeOut('slow');
+    }, 1000);
   }
 
   if (tutorialEl) {
