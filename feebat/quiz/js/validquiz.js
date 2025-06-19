@@ -13,6 +13,8 @@ const queryString = window.location.search
 const urlParams = new URLSearchParams(queryString)
 var xp1 = urlParams.get('xp1')
 var xp2 = urlParams.get('xp2')
+var autoplayParam = urlParams.get('autoplay')
+var sceneViewerParam = urlParams.get('sv')
 //// hide param in url
 window.history.replaceState(null, null, window.location.pathname)
 
@@ -43,15 +45,18 @@ var separatedView = false
 var shuffledInteractive_hot_spots = []
 
 //// generate viewer container
+let autoplayAttribute = autoplayParam ? ' autoplay' : ''
+let arModesValue = sceneViewerParam ? 'scene-viewer webxr quick-look' : 'webxr scene-viewer quick-look'
+
 $('#full-page').append(
   `<viewer-container>
-  <model-viewer id="modelViewer" alt="3D" 
+  <model-viewer id="modelViewer" alt="3D"${autoplayAttribute}
   ar
   ar-placement="${ar_floor_or_wall}"
-  ar-scale="fixed" 
-  ar-modes="webxr scene-viewer quick-look"
-  interpolation-decay="100" 
-  camera-controls 
+  ar-scale="fixed"
+  ar-modes="${arModesValue}"
+  interpolation-decay="100"
+  camera-controls
   touch-action
   interaction-prompt="when-focused" 
   interaction-prompt-threshold="10000" 
