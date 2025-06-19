@@ -98,6 +98,7 @@ function setupModals() {
     const startBtn = document.getElementById('start-btn');
     if (startBtn) {
       startBtn.addEventListener('click', () => {
+        startBtn.blur();
         welcomeModal.hide();
         if (tutorialEl) {
           const tutorialModal = new bootstrap.Modal(tutorialEl);
@@ -112,6 +113,7 @@ function setupModals() {
     const closeBtn = document.getElementById('tutorial-close-btn');
     if (closeBtn) {
       closeBtn.addEventListener('click', () => {
+        closeBtn.blur();
         const tutInstance = bootstrap.Modal.getInstance(tutorialEl) || new bootstrap.Modal(tutorialEl);
         tutInstance.hide();
       });
