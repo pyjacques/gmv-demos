@@ -21,7 +21,7 @@ L’expérience se découpe en plusieurs écrans interactifs :
 
 ## 📂 Dossiers du projet
 
-- `Total/` : Dossier principal du développement en cours (code, assets, UI, animations).
+- `total/` : Dossier principal du développement en cours (code, assets, UI, animations).
 - `astro/` : **Archive figée** d’anciens éléments de configuration ou d'essais. Ce dossier n’est plus modifiable et est conservé à des fins de référence.
 - `fibat/` : **Archive de travail** issue d’une phase initiale du projet. Elle ne doit pas être modifiée et est uniquement conservée pour consultation.
 
@@ -29,5 +29,5 @@ L’expérience se découpe en plusieurs écrans interactifs :
 
 - Le projet est en **phase 2 de développement**, dédiée à l’implémentation interactive des fonctionnalités décrites dans le cahier des charges.
 - La modélisation 3D du container et de ses composants a déjà été réalisée en amont.
-- Toute contribution se fait désormais exclusivement dans le répertoire `Total/` ou selon les branches spécifiques du développement en cours.
+- Toute contribution se fait désormais exclusivement dans le répertoire `total/` ou selon les branches spécifiques du développement en cours.
 
