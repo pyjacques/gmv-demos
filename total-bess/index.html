@@ -36,7 +36,15 @@
           </anim-button>
         </top-left-menu>
       <bottom-left-menu>
+
+        <div id="labels" class="p-2">
+          <div id="label1" class="draggable-label mb-2" draggable="true">Cellule</div>
+          <div id="label2" class="draggable-label mb-2" draggable="true">Module</div>
+          <div id="label3" class="draggable-label" draggable="true">Rack</div>
+        </div>
+
         <button id="lang-toggle" class="btn btn-secondary text-light fs-6">EN</button>
+
       </bottom-left-menu>
       <bottom-centered-progress>
         <div class="">
@@ -107,5 +115,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@google/model-viewer@1.11.1/dist/model-viewer-umd.min.js" crossorigin="anonymous"></script>
     <script src="js/viewer.js"></script>
+    <script src="js/dragdrop.js"></script>
   </body>
 </html>

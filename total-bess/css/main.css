@@ -519,3 +519,21 @@ bottom-centered-progress {
   color: #003366;
   border: none;
 }
+
+/* Drag & drop labels */
+.draggable-label {
+  padding: 6px 12px;
+  background-color: #008c78;
+  color: #fff;
+  border-radius: 12px;
+  cursor: grab;
+  user-select: none;
+}
+
+.draggable-label.dragging {
+  opacity: 0.5;
+}
+
+.zoneHotSpot.drop-target {
+  outline: 2px dashed #00d2a8;
+}
