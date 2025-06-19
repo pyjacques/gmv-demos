@@ -36,11 +36,15 @@
           </anim-button>
         </top-left-menu>
       <bottom-left-menu>
+
         <div id="labels" class="p-2">
           <div id="label1" class="draggable-label mb-2" draggable="true">Cellule</div>
           <div id="label2" class="draggable-label mb-2" draggable="true">Module</div>
           <div id="label3" class="draggable-label" draggable="true">Rack</div>
         </div>
+
+        <button id="lang-toggle" class="btn btn-secondary text-light fs-6">EN</button>
+
       </bottom-left-menu>
       <bottom-centered-progress>
         <div class="">
@@ -84,10 +88,10 @@
           <div class="modal-content welcome-gradient text-center p-4">
             <h2 id="welcomeModalLabel">🦺 Bienvenue dans la démo BESS ✌️</h2>
             <ul class="text-darkblue mt-3 mb-3">
-              <li>Visualisez la batterie en 3D</li>
-              <li>Utilisez les boutons pour changer de vue</li>
+              <li id="welcome-bullet-1">Visualisez la batterie en 3D</li>
+              <li id="welcome-bullet-2">Utilisez les boutons pour changer de vue</li>
             </ul>
-            <p class="fst-italic">Cette expérience fonctionne mieux sur ordinateur.</p>
+            <p id="welcome-tagline" class="fst-italic">Cette expérience fonctionne mieux sur ordinateur.</p>
             <button id="start-btn" class="btn btn-start mt-3">COMMENCER</button>
           </div>
         </div>
@@ -96,7 +100,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content text-center p-4">
             <h5 id="tutorialModalLabel" class="mb-3">Comment manipuler le modèle ?</h5>
-            <p>Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.</p>
+            <p id="tutorial-text">Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.</p>
             <button id="tutorial-close-btn" class="btn btn-primary">C’est parti !</button>
           </div>
         </div>
