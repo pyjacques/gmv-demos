@@ -121,8 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch((err) => {
       console.error('Failed to load JSON:', err);
+      currentLang = detectLang();
+      applyLanguage(currentLang);
       initUI();
       setupLoadListener();
+      setupLangToggle();
     });
 });
 
