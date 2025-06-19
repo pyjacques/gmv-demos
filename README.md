@@ -31,3 +31,14 @@ L’expérience se découpe en plusieurs écrans interactifs :
 - La modélisation 3D du container et de ses composants a déjà été réalisée en amont.
 - Toute contribution se fait désormais exclusivement dans le répertoire `total-bess/` ou selon les branches spécifiques du développement en cours.
 
+## Démarrer un serveur local
+
+Pour visualiser les exemples localement, exécutez :
+
+```bash
+npm install
+npm start
+```
+
+Cela lance un petit serveur HTTP et sert les fichiers du dépôt sur `http://localhost:8080`.
+

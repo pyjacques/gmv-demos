@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "echo \"No test specified\""
+    "test": "echo \"No test specified\"",
+    "start": "http-server ./ -c-1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }
