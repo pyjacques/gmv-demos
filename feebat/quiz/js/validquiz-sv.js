@@ -401,8 +401,8 @@ $(document).ready(function () {
                 <div class="toast-body">
                   <div class="card">
                     <div class="card-body"> 
-                      <h6>${jsonData.interactive_hot_spots[i].success_title}</h6></strong>
-                      ${jsonData.interactive_hot_spots[i].success_description}
+                    <h6>${jsonData.interactive_hot_spots[i].success_title}</h6>
+                    ${jsonData.interactive_hot_spots[i].success_description}
                     </div>
                   </div>
                 </div>
@@ -450,7 +450,7 @@ $(document).ready(function () {
               <div class="toast-body">
                 <div class="card">
                   <div class="card-body"> 
-                    <h6>${jsonData.interactive_hot_spots[i].failed_title}</h6></strong>
+                    <h6>${jsonData.interactive_hot_spots[i].failed_title}</h6>
                     ${jsonData.interactive_hot_spots[i].failed_description}
                   </div>
                 </div>
