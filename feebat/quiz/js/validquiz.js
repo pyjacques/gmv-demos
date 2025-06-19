@@ -259,7 +259,7 @@ $(document).ready(function () {
                   </div>
               </div>
               <div class="modal-footer p-1">
-                  <button type="button" class="btn btn-outline-secondary" onclick="$('#initialModal1').modal('hide');$('#initialModal2').modal('show');">${jsonData.main_ui.understood}</button>
+                  <button type="button" class="btn btn-outline-secondary" id="initialModal1Btn" data-bs-dismiss="modal">${jsonData.main_ui.understood}</button>
               </div>
           </div>
       </div>`
@@ -284,7 +284,7 @@ $(document).ready(function () {
                   </div>
               </div>
               <div class="modal-footer p-1">
-                  <button type="button" class="btn btn-outline-secondary" onclick="$('#initialModal2').modal('hide');$('#initialModal3').modal('show');">${jsonData.main_ui.understood}</button>
+                  <button type="button" class="btn btn-outline-secondary" id="initialModal2Btn" data-bs-dismiss="modal">${jsonData.main_ui.understood}</button>
               </div>
           </div>
       </div>`
@@ -309,7 +309,7 @@ $(document).ready(function () {
                   </div>
               </div>
               <div class="modal-footer p-1">
-                  <button type="button" class="btn btn-outline-secondary" onclick="$('#initialModal3').modal('hide');$('#initialModal4').modal('show');">${jsonData.main_ui.understood}</button>
+                  <button type="button" class="btn btn-outline-secondary" id="initialModal3Btn" data-bs-dismiss="modal">${jsonData.main_ui.understood}</button>
               </div>
           </div>
       </div>`
@@ -334,7 +334,7 @@ $(document).ready(function () {
                   </div>
               </div>
               <div class="modal-footer p-1">
-                  <button type="button" class="btn btn-secondary" onclick="$('#initialModal4').modal('hide');">${jsonData.main_ui.letsbegin}</button>
+                  <button type="button" class="btn btn-secondary" id="initialModal4Btn" data-bs-dismiss="modal">${jsonData.main_ui.letsbegin}</button>
               </div>
           </div>
       </div>`
@@ -366,6 +366,30 @@ $(document).ready(function () {
             </div>
         </div>`
     )
+
+    // Bind intro modal navigation handlers
+    $('#initialModal1Btn').on('click', function () {
+      $('#initialModal1').modal('hide')
+    })
+    $('#initialModal2Btn').on('click', function () {
+      $('#initialModal2').modal('hide')
+    })
+    $('#initialModal3Btn').on('click', function () {
+      $('#initialModal3').modal('hide')
+    })
+    $('#initialModal4Btn').on('click', function () {
+      $('#initialModal4').modal('hide')
+    })
+
+    $('#initialModal1').on('hidden.bs.modal', function () {
+      $('#initialModal2').modal('show')
+    })
+    $('#initialModal2').on('hidden.bs.modal', function () {
+      $('#initialModal3').modal('show')
+    })
+    $('#initialModal3').on('hidden.bs.modal', function () {
+      $('#initialModal4').modal('show')
+    })
 
     //// generate HotSpots
     for (let i = 0; i < jsonData.interactive_hot_spots.length; i++) {
