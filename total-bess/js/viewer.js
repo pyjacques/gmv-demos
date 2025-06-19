@@ -10,10 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((data) => {
       uiText = data;
       initUI();
+      setupModals();
     })
     .catch((err) => {
       console.error('Failed to load JSON:', err);
       initUI();
+      setupModals();
     });
 });
 
@@ -75,6 +77,36 @@ function initUI() {
         modal.show();
       }
     });
+  }
+}
+
+function setupModals() {
+  const welcomeEl = document.getElementById('welcomeModal');
+  const tutorialEl = document.getElementById('tutorialModal');
+
+  if (welcomeEl) {
+    const welcomeModal = new bootstrap.Modal(welcomeEl);
+    const startBtn = document.getElementById('start-btn');
+    if (startBtn) {
+      startBtn.addEventListener('click', () => {
+        welcomeModal.hide();
+        if (tutorialEl) {
+          const tutorialModal = new bootstrap.Modal(tutorialEl);
+          tutorialModal.show();
+        }
+      });
+    }
+    welcomeModal.show();
+  }
+
+  if (tutorialEl) {
+    const closeBtn = document.getElementById('tutorial-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        const tutInstance = bootstrap.Modal.getInstance(tutorialEl) || new bootstrap.Modal(tutorialEl);
+        tutInstance.hide();
+      });
+    }
   }
 }
 
