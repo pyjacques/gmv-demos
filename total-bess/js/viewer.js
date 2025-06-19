@@ -73,6 +73,10 @@ function initUI() {
       }
     });
   }
+
+  // Initialize all Bootstrap tooltips
+  const tooltipEls = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  tooltipEls.forEach((el) => new bootstrap.Tooltip(el));
 }
 
 function setupLoadListener() {
@@ -100,6 +104,7 @@ function setupModals() {
     const startBtn = document.getElementById('start-btn');
     if (startBtn) {
       startBtn.addEventListener('click', () => {
+        startBtn.blur();
         welcomeModal.hide();
         if (tutorialModal) {
           welcomeEl.addEventListener(
@@ -117,7 +122,9 @@ function setupModals() {
     const closeBtn = document.getElementById('tutorial-close-btn');
     if (closeBtn) {
       closeBtn.addEventListener('click', () => {
-        tutorialModal.hide();
+        closeBtn.blur();
+        const tutInstance = bootstrap.Modal.getInstance(tutorialEl) || new bootstrap.Modal(tutorialEl);
+        tutInstance.hide();
       });
     }
   }
@@ -135,6 +142,9 @@ async function separateView() {
         <span data-bs-toggle="tooltip" data-bs-placement="right" title="${uiText.initial_view_tooltip || 'initial-view'}"><i class="bi bi-box"></i></span>
     </button>`
   );
+  document
+    .querySelectorAll('[data-bs-toggle="tooltip"]')
+    .forEach((el) => new bootstrap.Tooltip(el));
 }
 
 async function initialView() {
@@ -149,4 +159,7 @@ async function initialView() {
         <span data-bs-toggle="tooltip" data-bs-placement="right" title="${uiText.separate_view_tooltip || 'separate-view'}"><i class="bi bi-layers"></i></span>
     </button>`
   );
+  document
+    .querySelectorAll('[data-bs-toggle="tooltip"]')
+    .forEach((el) => new bootstrap.Tooltip(el));
 }
