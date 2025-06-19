@@ -504,3 +504,18 @@ bottom-centered-progress {
   visibility: hidden;
   transition: visibility 10s, opacity 2s 2s;
 }
+
+.welcome-gradient {
+  background: linear-gradient(to bottom, #00D2A8, #0096E6);
+}
+
+.text-darkblue {
+  color: #003366;
+}
+
+.btn-start {
+  border-radius: 30px;
+  background-color: #ffffff;
+  color: #003366;
+  border: none;
+}
