@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((data) => {
       uiText = data;
       initUI();
-      setupModals();
+      setupLoadListener();
     })
     .catch((err) => {
       console.error('Failed to load JSON:', err);
       initUI();
-      setupModals();
+      setupLoadListener();
     });
 });
 
@@ -78,6 +78,20 @@ function initUI() {
       }
     });
   }
+}
+
+function setupLoadListener() {
+  const modelViewer = document.getElementById('modelViewer');
+  if (!modelViewer) return;
+  modelViewer.addEventListener(
+    'load',
+    () => {
+      $('#overlay').fadeOut('slow', () => {
+        setupModals();
+      });
+    },
+    { once: true }
+  );
 }
 
 function setupModals() {
