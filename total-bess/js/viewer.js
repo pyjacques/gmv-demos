@@ -97,6 +97,8 @@ function setupModals() {
   const welcomeEl = document.getElementById('welcomeModal');
   const tutorialEl = document.getElementById('tutorialModal');
 
+  const tutorialModal = tutorialEl ? new bootstrap.Modal(tutorialEl) : null;
+
   if (welcomeEl) {
     const welcomeModal = new bootstrap.Modal(welcomeEl);
     const startBtn = document.getElementById('start-btn');
@@ -104,16 +106,19 @@ function setupModals() {
       startBtn.addEventListener('click', () => {
         startBtn.blur();
         welcomeModal.hide();
-        if (tutorialEl) {
-          const tutorialModal = new bootstrap.Modal(tutorialEl);
-          tutorialModal.show();
+        if (tutorialModal) {
+          welcomeEl.addEventListener(
+            'hidden.bs.modal',
+            () => tutorialModal.show(),
+            { once: true }
+          );
         }
       });
     }
     welcomeModal.show();
   }
 
-  if (tutorialEl) {
+  if (tutorialModal) {
     const closeBtn = document.getElementById('tutorial-close-btn');
     if (closeBtn) {
       closeBtn.addEventListener('click', () => {
