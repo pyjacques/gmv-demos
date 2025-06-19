@@ -15,6 +15,40 @@
     <!-- Full page viewer -->
     <full-page id="full-page"></full-page>
 
+     <!-- Main UI -->
+    <ui>
+      <progress-bar class="progress-container fixed-top">
+        <span class="progress-bar"></span>
+      </progress-bar>
+      <brand-logo>
+        <img src="img/total-energy-logo.png" id="brand-logo" alt="TotalEnergies Logo">
+      </brand-logo>
+      <top-left-menu>
+        <button type="button" class="btn btn-primary text-light fs-3" id="info-btn" data-bs-toggle="modal" data-bs-target="#infoModal">
+          <span data-bs-toggle="tooltip" data-bs-placement="right" title="Explications">
+            <i class="bi bi-question-circle"></i>
+          </span>
+        </button>
+        <anim-button id="anim-button">
+          <button type="button" class="btn btn-primary text-light fs-3" onclick="separateView()">
+            <span data-bs-toggle="tooltip" data-bs-placement="right" title="separate-view"><i class="bi bi-layers-half"></i></span>
+          </button>
+        </anim-button>
+      </top-left-menu>
+      <bottom-left-menu>
+
+      </bottom-left-menu>
+      <bottom-centered-progress>
+        <div class="">
+          <div class="">
+            <div id="stepper-wrapper" class="stepper-wrapper">
+            </div>
+          </div>
+        </div>
+
+      </bottom-centered-progress>
+    </ui>
+
     <!-- Info button -->
     <div class="position-absolute top-0 start-0 p-3">
       <button type="button" class="btn btn-primary text-light fs-3" id="info-btn">
@@ -50,6 +84,11 @@
         </div>
       </div>
     </modals>
+
+     <!-- Loading Overlay -->
+    <overlay id="overlay" >
+      <div class="loader">Chargement...</div>
+    </overlay>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@google/model-viewer@1.11.1/dist/model-viewer-umd.min.js" crossorigin="anonymous"></script>
