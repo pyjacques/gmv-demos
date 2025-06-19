@@ -73,6 +73,10 @@ function initUI() {
       }
     });
   }
+
+  // Initialize all Bootstrap tooltips
+  const tooltipEls = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  tooltipEls.forEach((el) => new bootstrap.Tooltip(el));
 }
 
 function setupLoadListener() {
@@ -133,6 +137,9 @@ async function separateView() {
         <span data-bs-toggle="tooltip" data-bs-placement="right" title="${uiText.initial_view_tooltip || 'initial-view'}"><i class="bi bi-box"></i></span>
     </button>`
   );
+  document
+    .querySelectorAll('[data-bs-toggle="tooltip"]')
+    .forEach((el) => new bootstrap.Tooltip(el));
 }
 
 async function initialView() {
@@ -147,4 +154,7 @@ async function initialView() {
         <span data-bs-toggle="tooltip" data-bs-placement="right" title="${uiText.separate_view_tooltip || 'separate-view'}"><i class="bi bi-layers"></i></span>
     </button>`
   );
+  document
+    .querySelectorAll('[data-bs-toggle="tooltip"]')
+    .forEach((el) => new bootstrap.Tooltip(el));
 }
