@@ -18,4 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
       shadow-softness="1">
     </model-viewer>
   </viewer-container>`;
+
+  const infoBtn = document.getElementById('info-btn');
+  if (infoBtn) {
+    infoBtn.addEventListener('click', () => {
+      const infoModalEl = document.getElementById('infoModal');
+      if (infoModalEl) {
+        const modal = new bootstrap.Modal(infoModalEl);
+        modal.show();
+      }
+    });
+  }
 });
