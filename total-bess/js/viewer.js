@@ -24,7 +24,7 @@ function initUI() {
   <viewer-container>
     <model-viewer id="modelViewer"
       alt="${uiText.viewer_alt || 'Total BESS model'}"
-      src="../3Dmodel/V-TOTAL-011.glb"
+      src="3Dmodel/V-TOTAL-011.glb"
       ar
       ar-modes="webxr scene-viewer quick-look"
       camera-controls
