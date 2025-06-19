@@ -1,0 +1,8 @@
+{
+  "name": "gmv-demos",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"No test specified\""
+  }
+}
