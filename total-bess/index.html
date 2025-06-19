@@ -25,13 +25,13 @@
       </brand-logo>
       <top-left-menu>
         <button type="button" class="btn btn-primary text-light fs-3" id="info-btn" data-bs-toggle="modal" data-bs-target="#infoModal">
-          <span data-bs-toggle="tooltip" data-bs-placement="right" title="Explications">
+          <span id="tooltip-explications" data-bs-toggle="tooltip" data-bs-placement="right" title="Explications">
             <i class="bi bi-question-circle"></i>
           </span>
         </button>
         <anim-button id="anim-button">
           <button type="button" class="btn btn-primary text-light fs-3" onclick="separateView()">
-            <span data-bs-toggle="tooltip" data-bs-placement="right" title="separate-view"><i class="bi bi-layers-half"></i></span>
+            <span id="tooltip-separate-view" data-bs-toggle="tooltip" data-bs-placement="right" title="separate-view"><i class="bi bi-layers-half"></i></span>
           </button>
         </anim-button>
       </top-left-menu>
@@ -52,7 +52,7 @@
     <!-- Info button -->
     <div class="position-absolute top-0 start-0 p-3">
       <button type="button" class="btn btn-primary text-light fs-3" id="info-btn">
-        <span data-bs-toggle="tooltip" data-bs-placement="right" title="Informations">
+        <span id="tooltip-informations" data-bs-toggle="tooltip" data-bs-placement="right" title="Informations">
           <i class="bi bi-info-circle"></i>
         </span>
       </button>
@@ -71,14 +71,14 @@
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-md-12 my-2">
-                    <p class="text-primary fs-5">Aide</p>
-                    <p>Utilisez la souris pour manipuler le modèle 3D.</p>
+                    <p id="modal-help-title" class="text-primary fs-5">Aide</p>
+                    <p id="modal-help-text">Utilisez la souris pour manipuler le modèle 3D.</p>
                   </div>
                 </div>
               </div>
             </div>
             <div class="modal-footer p-1">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+              <button id="modal-ok-btn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@
 
      <!-- Loading Overlay -->
     <overlay id="overlay" >
-      <div class="loader">Chargement...</div>
+      <div id="loader-text" class="loader">Chargement...</div>
     </overlay>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
