@@ -1,0 +1,14 @@
+{
+  "page_title": "Total 3D Demo",
+  "brand_logo_alt": "TotalEnergies Logo",
+  "info_button_tooltip": "Explications",
+  "separate_view_tooltip": "separate-view",
+  "initial_view_tooltip": "initial-view",
+  "info_tooltip": "Informations",
+  "modal_title": "Informations",
+  "modal_help_title": "Aide",
+  "modal_help_text": "Utilisez la souris pour manipuler le modèle 3D.",
+  "modal_ok": "OK",
+  "loader_text": "Chargement...",
+  "viewer_alt": "Total BESS model"
+}
