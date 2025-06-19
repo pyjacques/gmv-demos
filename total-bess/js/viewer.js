@@ -35,11 +35,6 @@ function initUI() {
       shadow-intensity="1"
       shadow-softness="1">
     </model-viewer>
-    <anim-button id="anim-button">
-      <button type="button" class="btn btn-primary text-light fs-3" onclick="separateView()">
-        <span id="anim-button-tooltip" data-bs-toggle="tooltip" data-bs-placement="right" title="${uiText.separate_view_tooltip || 'separate-view'}"><i class="bi bi-layers-half"></i></span>
-      </button>
-    </anim-button>
   </viewer-container>`;
 
   if (uiText.page_title) document.title = uiText.page_title;
