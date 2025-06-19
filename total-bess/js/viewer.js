@@ -83,15 +83,15 @@ function initUI() {
 function setupLoadListener() {
   const modelViewer = document.getElementById('modelViewer');
   if (!modelViewer) return;
-  modelViewer.addEventListener(
-    'load',
-    () => {
-      $('#overlay').fadeOut('slow', () => {
-        setupModals();
-      });
-    },
-    { once: true }
-  );
+
+  const hideOverlay = () => {
+    $('#overlay').fadeOut('slow', () => {
+      setupModals();
+    });
+  };
+
+  modelViewer.addEventListener('model-visibility', hideOverlay, { once: true });
+  modelViewer.addEventListener('load', hideOverlay, { once: true });
 }
 
 function setupModals() {
