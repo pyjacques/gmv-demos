@@ -1,0 +1,138 @@
+
+{
+    "main_ui": {
+        "experience_title": "La chaudière à granulés",
+        "help_btn": "Aide",
+        "help_modal_title": "Fonctionnement",
+        "help_modal_text": "Le fonctionnement de la chaudière à granulés est <stronger>assez similaire à celui de la chaudière gaz</stronger>.</br></br> La vis sans fin alimente le foyer en granulés, granulés qui seront brûlés par un brûleur et dont la combustion sera favorisée par l’arrivée d’air neuf.</br></br> La chaleur dégagée par la combustion chauffera l’eau du circuit du chauffage. </br></br>Enfin, les fumées seront évacuées dans un conduit dédié",
+        "initial_1_modal_text": "Tu peux pivoter autour du modèle 3D, zoomer et dézoomer. Depuis un smartphone, tu peux aussi visualiser le poêle en réalité augmentée : si ton smartphone est compatible avec cette technologie, un cube apparaitra en bas à droite de ton écran.",
+        "initial_2_modal_text": "Cette chaudière est composée de plusieurs parties. Tu peux accéder à la vue éclatée en appuyant sur le bouton avec cet icône, situé en haut à gauche.",
+        "initial_3_modal_text": "Pour suivre ta progression, une barre avec des coeurs en bas de l'écran se remplira à chaque bonne réponse fournie !",
+        "initial_4_modal_text": "<strong>Ta mission</strong></br>Identifier certains éléments clés de la chaudière en cliquant sur les zones d’interaction. À chaque bonne réponse, un point est gagné !",
+        "felicitation_modal_title": "Félicitations !",
+        "felicitation_modal_text": "Tu as exploré toutes les zones de cette chaudière.",
+        "felicitation_modal_leave_btn": "Retour au choix des chaudières",
+        "understood": "Compris >",
+        "letsbegin": "Commençons !",
+        "ok": "OK",
+        "validate": "Valider",
+        "close": "Fermer",
+        "retry": "Rééssayer",
+        "element_question": "De quel élément s’agit-il ?",
+        "choose_answer": "Choisissez une réponse",
+        "good_answer": "Bonne réponse !",
+        "bad_answer": "Mauvaise réponse."
+    },
+    "settings": {
+        "experience_title": true,
+        "interactive_hot_spots_visible_labels": true,
+        "default_viewer_3d_cam_position": "30deg 80deg auto",
+        "default_viewer_3d_cam_target": "0.00m 0.65m 0.00m"
+    },
+    "interactive_hot_spots": [
+        {
+            "hidden_name": "Le foyer", 
+            "mesh_3d_to_highlight": "boiler-granules-part-5-chambre_hl",
+            "viewer_3d_data_position1": "0.20m 0.75m 0.35m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "0.20m 0.75m 0.35m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "25deg 70deg 1.50m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "0.20m 0.75m 0.35m",
+            "success_title": "Effectivement, il s’agit bien du foyer !",
+            "success_description": "Le foyer est l’enceinte où a lieu la combustion..",
+            "failed_title": "Eh non, ce n’est pas le foyer !",
+            "failed_description": "Le foyer est l’enceinte où a lieu la combustion."
+        },
+        {
+            "hidden_name": "La vis sans fin d'alimentation", 
+            "mesh_3d_to_highlight": "boiler-granules-part-4-echangeur_hl",
+            "viewer_3d_data_position1": "0.20m 0.30m 0.10m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "0.20m 0.30m 0.10m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "90deg 75deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "0.20m 0.30m 0.10m",
+            "success_title": "Effectivement, il s’agit bien de la vis sans fin d'alimentation !",
+            "success_description": "La vis sans fin, activée par un moteur, alimente automatiquement le foyer en granulés. Elle est donc située entre le foyer et le réservoir à granulés.",
+            "failed_title": "Eh non, ce n’est pas la vis sans fin d'alimentation !",
+            "failed_description": "La vis sans fin, activée par un moteur, alimente automatiquement le foyer en granulés. Elle est donc située entre le foyer et le réservoir à granulés."
+        },
+        {
+            "hidden_name": "La circuit de chauffage", 
+            "mesh_3d_to_highlight": "boiler-granules-part-3-cir-chauf_hl",
+            "viewer_3d_data_position1": "0.41m 0.32m -0.27m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "0.41m 0.32m -0.27m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "70deg 80deg 2.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "0.41m 0.42m -0.27m",
+            "success_title": "Effectivement, il s’agit bien du circuit de chauffage !",
+            "success_description": "Le circuit de chauffage contient de l’eau circulant entre la chaudière et les émetteurs de chauffage. L’eau est réchauffée par la combustion dans la chaudière.",
+            "failed_title": "Eh non, ce n’est pas le circuit de chauffage !",
+            "failed_description": "Le circuit de chauffage contient de l’eau circulant entre la chaudière et les émetteurs de chauffage. L’eau est réchauffée par la combustion dans la chaudière."
+        },
+        {
+            "hidden_name": "Le brûleur", 
+            "mesh_3d_to_highlight": "boiler-granules-part-1-bruleur_hl",
+            "viewer_3d_data_position1": "0.20m 0.40m 0.20m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "0.20m 0.40m 0.20m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "55deg 85deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "0.20m 0.40m 0.20m",
+            "success_title": "Effectivement, il s’agit bien du brûleur !",
+            "success_description": "Le brûleur permet la combustion des granulés dans le foyer.",
+            "failed_title": "Eh non, ce n’est pas le brûleur !",
+            "failed_description": "Le brûleur permet la combustion des granulés dans le foyer."
+        },
+        {
+            "hidden_name": "Le conduit d'évacuation des fumées", 
+            "mesh_3d_to_highlight": "boiler-granules-part-6-extract_hl",
+            "viewer_3d_data_position1": "0.35m 1.17m -0.48m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "0.35m 1.17m -0.48m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "100deg 80deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "0.35m 1.17m -0.48m",
+            "success_title": "Effectivement, il s’agit bien du conduit d'évacuation des fumées !",
+            "success_description": "Le conduit d’évacuation des fumées relie la chaudière à l’extérieur pour, comme son nom l’indique, évacuer les fumées générées par la combustion.",
+            "failed_title": "Eh non, ce n’est pas le conduit d'évacuation des fumées !",
+            "failed_description": "Le conduit d’évacuation des fumées relie la chaudière à l’extérieur pour, comme son nom l’indique, évacuer les fumées générées par la combustion."
+        },
+        {
+            "hidden_name": "L’alimenation en air frais", 
+            "mesh_3d_to_highlight": "boiler-granules-part-7-alim-air_hl",
+            "viewer_3d_data_position1": "0.17m 0.39m -0.47m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "0.17m 0.39m -0.47m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "95deg 95deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "0.17m 0.39m -0.47m",
+            "success_title": "Effectivement, il s’agit bien de l'alimentation en air frais !",
+            "success_description": "L’alimentation en air frais se fait soit par des ouvertures sur la pièce, soit via un conduit dédié. L’air frais est nécessaire à une bonne combustion.",
+            "failed_title": "Eh non, ce n’est pas l'alimentation en air frais !",
+            "failed_description": "L’alimentation en air frais se fait soit par des ouvertures sur la pièce, soit via un conduit dédié. L’air frais est nécessaire à une bonne combustion."
+        },
+        {
+            "hidden_name": "Le réservoir à granulés", 
+            "mesh_3d_to_highlight": "boiler-granules-part-8-approv-granules_hl",
+            "viewer_3d_data_position1": "0.36m 0.71m -0.34m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "0.36m 0.71m -0.34m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "80deg 70deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "0.36m 0.71m -0.34m",
+            "success_title": "Effectivement, il s’agit bien du réservoir à granulés !",
+            "success_description": "Le réservoir à granulés est la partie de la chaudière où sont stockés les granulés avant d’être transportés vers le brûleur par la vis sans fin.",
+            "failed_title": "Eh non, ce n’est pas le réservoir à granulés !",
+            "failed_description": "Le réservoir à granulés est la partie de la chaudière où sont stockés les granulés avant d’être transportés vers le brûleur par la vis sans fin."
+        },
+        {
+            "hidden_name": "Le cendrier", 
+            "mesh_3d_to_highlight": "boiler-granules-part-2-cendrier_hl",
+            "viewer_3d_data_position1": "0.35m 0.10m 0.20m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "0.35m 0.10m 0.20m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "75deg 60deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "0.35m 0.10m 0.20m",
+            "success_title": "Effectivement, il s’agit bien du cendrier !",
+            "success_description": "Le cendrier est situé sous le brûleur. Il réceptionne les cendres issues de la combustion des granulés.",
+            "failed_title": "Eh non, ce n’est pas le cendrier !",
+            "failed_description": "Le cendrier est situé sous le brûleur. Il réceptionne les cendres issues de la combustion des granulés. "
+        }
+    ]
+}

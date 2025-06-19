@@ -1,0 +1,125 @@
+
+{
+    "main_ui": {
+        "experience_title": "Le poêle à granulés",
+        "help_btn": "Aide",
+        "help_modal_title": "<strong>Fonctionnement</strong>",
+        "help_modal_text": "La vis sans fin <strong>alimente automatiquement</strong> le foyer en granulés.</br></br> La bougie d'allumage <strong>souffle de l’air très chaud</strong> au démarrage pour <strong>enflammer les granulés</strong>.</br></br> L'extracteur de fumée <strong>évacue les fumées</strong> jusqu'au conduit.</br></br> Le ventilateur <strong>diffuse la chaleur</strong> dans la pièce par convection forcée.",
+        "initial_1_modal_text": "Tu peux pivoter autour du modèle 3D, zoomer et dézoomer. Depuis un smartphone, tu peux aussi visualiser le poêle en réalité augmentée : si ton smartphone est compatible avec cette technologie, un cube apparaitra en bas à droite de ton écran.",
+        "initial_2_modal_text": "Ce poêle est composé de plusieurs parties. Tu peux accéder à la vue éclatée en appuyant sur le bouton avec cet icône, situé en haut à gauche.",
+        "initial_3_modal_text": "Pour suivre ta progression, une barre avec des coeurs en bas de l'écran se remplira à chaque bonne réponse fournie !",
+        "initial_4_modal_text": "<strong>Ta mission</strong></br>Identifier certains éléments clés du poêle en cliquant sur les zones d’interaction. À chaque bonne réponse, un point est gagné !",
+        "felicitation_modal_title": "Félicitations !",
+        "felicitation_modal_text": "Tu as exploré toutes les zones de ce poêle.",
+        "felicitation_modal_leave_btn": "Retour au choix des poêles",
+        "understood": "Compris >",
+        "letsbegin": "Commençons !",
+        "ok": "OK",
+        "validate": "Valider",
+        "close": "Fermer",
+        "retry": "Rééssayer",
+        "element_question": "De quel élément s’agit-il ?",
+        "choose_answer": "Choisis une réponse",
+        "good_answer": "Bonne réponse !",
+        "bad_answer": "Mauvaise réponse."
+    },
+    "settings": {
+        "experience_title": true,
+        "interactive_hot_spots_visible_labels": true,
+        "default_viewer_3d_cam_position": "-30deg 85deg auto",
+        "default_viewer_3d_cam_target": "0.00m 0.85m 0.00m"
+    },
+    "interactive_hot_spots": [
+        {
+            "hidden_name": "Le foyer", 
+            "mesh_3d_to_highlight": "part_1_foyer_hl",
+            "viewer_3d_data_position1": "0.00m 0.50m 0.10m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "0.00m 0.50m 0.35m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "-45deg 70deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "0.0m 0.50m 0.15m",
+            "success_title": "Effectivement, il s’agit bien du foyer !",
+            "success_description": "Le foyer est la partie du poêle où a lieu la combustion des granulés.",
+            "failed_title": "Eh non, ce n’est pas le foyer !",
+            "failed_description": "Le foyer est la partie du poêle où a lieu la combustion des granulés."
+        },
+        {
+            "hidden_name": "Le réservoir à granulés",
+            "mesh_3d_to_highlight": "part_4_res_hl",
+            "viewer_3d_data_position1": "0.00m 1.00m -0.10m",
+            "viewer_3d_data_position2": "0.00m 1.00m -0.35m",
+            "viewer_3d_data_normal": "0.00m 0.00m -0.10m",
+            "viewer_3d_cam_position": "-240deg 60deg 1.00m",
+            "viewer_3d_cam_target": "0.0m 1.00m -0.25m",
+            "success_title": "Effectivement, il s’agit bien du réservoir à granulés !",
+            "success_description": "Le réservoir à granulés est la partie du poêle où sont stockés les granulés avant d'être brulés dans le foyer.",
+            "failed_title": "Eh non, ce n’est pas le réservoir à granulés !",
+            "failed_description": "Le réservoir à granulés est la partie du poêle où sont stockés les granulés avant d'être brulés dans le foyer."
+        },
+        {
+            "hidden_name": "La vis sans fin d'alimentation",
+            "mesh_3d_to_highlight": "part_4_vis_hl",
+            "viewer_3d_data_position1": "0.00m 0.50m -0.15m",
+            "viewer_3d_data_position2": "0.00m 0.55m -0.25m",
+            "viewer_3d_data_normal": "0.00m 0.00m -0.10m",
+            "viewer_3d_cam_position": "-260deg 95deg 1m",
+            "viewer_3d_cam_target": "0.0m 0.60m -0.15m",
+            "success_title": "Effectivement, il s’agit bien de la vis sans fin pour granulés !",
+            "success_description": "La vis sans fin, activée par un moteur, alimente automatiquement le foyer en granulés. Elle est donc située entre le foyer et le réservoir à granulés.",
+            "failed_title": "Eh non, ce n’est pas la vis sans fin pour granules !",
+            "failed_description": "La vis sans fin, activée par un moteur, alimente automatiquement le foyer en granulés. Elle est donc située entre le foyer et le réservoir à granulés."
+        },
+        {
+            "hidden_name": "Le ventilateur de soufflage d'air chaud",
+            "mesh_3d_to_highlight": "part_5_vent_hl",
+            "viewer_3d_data_position1": "0.00m 0.10m 0.10m",
+            "viewer_3d_data_position2": "0.00m 0.20m 0.30m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "-300deg 85deg 1.00m",
+            "viewer_3d_cam_target": "0.0m 0.20m 0.25m",
+            "success_title": "Effectivement, il s’agit bien du ventilateur de soufflage d'air chaud !",
+            "success_description": "Le ventilateur de soufflage d’air chaud est situé à proximité du foyer et permet de faire circuler l’air autour du foyer pour le réchauffer et le propulser dans la pièce.",
+            "failed_title": "Eh non, ce n’est pas le ventilateur de soufflage d'air chaud !",
+            "failed_description": "Le ventilateur de soufflage d’air chaud est situé à proximité du foyer et permet de faire circuler l’air autour du foyer pour le réchauffer et le propulser dans la pièce."
+        },
+        {
+            "hidden_name": "La sortie du soufflage d'air chaud",
+            "mesh_3d_to_highlight": "part_10_heat_hl",
+            "viewer_3d_data_position1": "0.00m 0.95m 0.25m",
+            "viewer_3d_data_position2": "0.00m 1.00m 0.50m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "-380deg 85deg 1.00m",
+            "viewer_3d_cam_target": "0.0m 0.90m 0.55m",
+            "success_title": "Effectivement, il s’agit bien de la sortie du souflage d'air chaud !",
+            "success_description": "La sortie du soufflage d’air chaud se trouve en partie haute du poêle et permet d’évacuer l’air chaud.",
+            "failed_title": "Eh non, ce n’est pas la sortie du souflage d'air chaud !",
+            "failed_description": "La sortie du soufflage d’air chaud se trouve en partie haute du poêle et permet d’évacuer l’air chaud."
+        },
+        {
+            "hidden_name": "Le conduit d’évacuation de fumée",
+            "mesh_3d_to_highlight": "part_11_extract_hl",
+            "viewer_3d_data_position1": "-0.15m 0.60m -0.20m",
+            "viewer_3d_data_position2": "-0.25m 0.75m -0.25m",
+            "viewer_3d_data_normal": "0.00m 0.00m -0.10m",
+            "viewer_3d_cam_position": "-140deg 60deg 1.00m",
+            "viewer_3d_cam_target": "-0.20m 1.00m -0.25m",
+            "success_title": "Effectivement, il s’agit bien du conduit d’évacuation de fumée !",
+            "success_description": "Le conduit d’évacuation des fumées se situe entre le poêle et le plafond ou le mur. Il est généralement en acier rigide ",
+            "failed_title": "Eh non, ce n’est pas le conduit d’évacuation de fumée !",
+            "failed_description": "Le conduit d’évacuation des fumées se situe entre le poêle et le plafond ou le mur. Il est généralement en acier rigide "
+        },
+        {
+            "hidden_name": "La bougie d'allumage",
+            "mesh_3d_to_highlight": "part_12_bougie_hl",
+            "viewer_3d_data_position1": "0.00m 0.40m -0.10m",
+            "viewer_3d_data_position2": "0.00m 0.40m -0.25m",
+            "viewer_3d_data_normal": "0.00m 0.00m -0.10m",
+            "viewer_3d_cam_position": "-260deg 95deg 1.5m",
+            "viewer_3d_cam_target": "0.00m 0.40m -0.30m",
+            "success_title": "Effectivement, il s’agit bien de la bougie d'allumage !",
+            "success_description": "La bougie d'allumage souffle de l'air très chaud sur les granulés au démarrage pour les enflammer.",
+            "failed_title": "Eh non, ce n’est pas de la bougie d'allumage !",
+            "failed_description": "La bougie d'allumage souffle de l'air très chaud sur les granulés au démarrage pour les enflammer."
+        }
+    ]
+}

@@ -1,0 +1,125 @@
+
+{
+    "main_ui": {
+        "experience_title": "La chaudière à condensation",
+        "help_btn": "Aide",
+        "help_modal_title": "<strong>Fonctionnement</strong>",
+        "help_modal_text": "<strong>Étape 1</strong> : En brûlant le combustible, la chaudière produit de la chaleur et des fumées. La chaleur chauffe l'eau qui circule dans la chaudière jusqu'à nos radiateurs.</br></br><strong>Étape 2</strong> : Si l’eau de retour du chauffage a une température inférieure ou égale à 50 °C, la vapeur d’eau présente dans les fumées de combustion se refroidit et devient liquide. C'est ce qu'on appelle la condensation. Ce phénomène dégage beaucoup de chaleur. Il va augmenter la température de l'eau de retour qui aura donc moins besoin d'être chauffée lors de la combustion.",
+        "initial_1_modal_text": "Tu peux pivoter autour du modèle 3D, zoomer et dézoomer. Depuis un smartphone, tu peux aussi visualiser le poêle en réalité augmentée : si ton smartphone est compatible avec cette technologie, un cube apparaitra en bas à droite de ton écran.",
+        "initial_2_modal_text": "Cette chaudière est composée de plusieurs parties. Tu peux accéder à la vue éclatée en appuyant sur le bouton avec cet icône, situé en haut à gauche.",
+        "initial_3_modal_text": "Pour suivre ta progression, une barre avec des coeurs en bas de l'écran se remplira à chaque bonne réponse fournie !",
+        "initial_4_modal_text": "<strong>Ta mission</strong></br>Identifier certains éléments clés de la chaudière en cliquant sur les zones d’interaction. À chaque bonne réponse, un point est gagné !",
+        "felicitation_modal_title": "Félicitations !",
+        "felicitation_modal_text": "Tu as exploré toutes les zones de cette chaudière.",
+        "felicitation_modal_leave_btn": "Retour au choix des chaudières",
+        "understood": "Compris >",
+        "letsbegin": "Commençons !",
+        "ok": "OK",
+        "validate": "Valider",
+        "close": "Fermer",
+        "retry": "Rééssayer",
+        "element_question": "De quel élément s’agit-il ?",
+        "choose_answer": "Choisis une réponse",
+        "good_answer": "Bonne réponse !",
+        "bad_answer": "Mauvaise réponse."
+    },
+    "settings": {
+        "experience_title": true,
+        "interactive_hot_spots_visible_labels": true,
+        "default_viewer_3d_cam_position": "-45deg 90deg 2m",
+        "default_viewer_3d_cam_target": "0.00m 1.00m 0.20m"
+    },
+    "interactive_hot_spots": [
+        {
+            "hidden_name": "Le brûleur", 
+            "mesh_3d_to_highlight": "boiler-condens-part-1_hl",
+            "viewer_3d_data_position1": "-0.02m 1.12m 0.25m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "-0.02m 1.12m 0.25m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "40deg 85deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "-0.02m 1.12m 0.25m",
+            "success_title": "Effectivement, il s’agit bien du brûleur !",
+            "success_description": "Le brûleur réalise la combustion du gaz pour chauffer le foyer ou corps de chauffe.",
+            "failed_title": "Eh non, ce n’est pas le brûleur !",
+            "failed_description": "Le brûleur réalise la combustion du gaz pour chauffer le foyer ou corps de chauffe."
+        },
+        {
+            "hidden_name": "Le corps de chauffe", 
+            "mesh_3d_to_highlight": "boiler-condens-part-2_hl",
+            "viewer_3d_data_position1": "-0.17m 1.28m 0.18m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "-0.17m 1.28m 0.18m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "-40deg 80deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "-0.17m 1.28m 0.18m",
+            "success_title": "Effectivement, il s’agit bien du corps de chauffe !",
+            "success_description": "Le corps de chauffe est la partie de la chaudière qui récupère la chaleur de la combustion du gaz. La flamme du brûleur s’y déploie et la chaleur dégagée est transmise à l’eau.",
+            "failed_title": "Eh non, ce n’est pas le corps de chauffe !",
+            "failed_description": "Le corps de chauffe est la partie de la chaudière qui récupère la chaleur de la combustion du gaz. La flamme du brûleur s’y déploie et la chaleur dégagée est transmise à l’eau."
+        },
+        {
+            "hidden_name": "L’échangeur circuit de chauffage", 
+            "mesh_3d_to_highlight": "boiler-condens-part-3_hl",
+            "viewer_3d_data_position1": "-0.11m 1.03m 0.24m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "-0.11m 1.03m 0.24m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "50deg 100deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "-0.11m 1.03m 0.24m",
+            "success_title": "Effectivement, il s’agit bien de l'échangeur circuit de chauffage !",
+            "success_description": "L’échangeur permet le transfert  de chaleur entre l’eau réchauffée par le corps de chauffe et l’eau froide pour produire de l’eau chaude sanitaire.",
+            "failed_title": "Eh non, ce n’est pas l'échangeur circuit de chauffage !",
+            "failed_description": "L’échangeur permet le transfert  de chaleur entre l’eau réchauffée par le corps de chauffe et l’eau froide pour produire de l’eau chaude sanitaire."
+        },
+        {
+            "hidden_name": "L’arrivée de gaz", 
+            "mesh_3d_to_highlight": "boiler-condens-part-4_hl",
+            "viewer_3d_data_position1": "-0.06m 0.88m 0.21m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "-0.06m 0.88m 0.21m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "35deg 75deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "-0.06m 0.88m 0.21m",
+            "success_title": "Effectivement, il s’agit bien de l'arrivée de gaz !",
+            "success_description": "L'arriveé de gaz se fait via une canalisation dédiée. Elle fournit la chaudière en gaz naturel nécessaire à la combustion.",
+            "failed_title": "Eh non, ce n’est pas l'arrivée !",
+            "failed_description": "L'arriveé de gaz se fait via une canalisation dédiée. Elle fournit la chaudière en gaz naturel nécessaire à la combustion."
+        },
+        {
+            "hidden_name": "L’évacuation des fumées", 
+            "mesh_3d_to_highlight": "boiler-condens-part-5_hl",
+            "viewer_3d_data_position1": "0.00m 1.49m 0.18m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "0.00m 1.49m 0.18m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "-110deg 90deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "0.00m 1.39m 0.18m",
+            "success_title": "Effectivement, il s’agit bien du conduit d'évacuation des fumées !",
+            "success_description": "Le conduit d’évacuation des fumées relie la chaudière à l’extérieur pour, comme son nom l’indique, évacuer les fumées générées par la combustion.",
+            "failed_title": "Eh non, ce n’est pas le conduit d'évacuation des fumées !",
+            "failed_description": "Le conduit d’évacuation des fumées relie la chaudière à l’extérieur pour, comme son nom l’indique, évacuer les fumées générées par la combustion."
+        },
+        {
+            "hidden_name": "L’arrivée en air frais", 
+            "mesh_3d_to_highlight": "boiler-condens-part-6_hl",
+            "viewer_3d_data_position1": "-0.06m 1.35m 0.26m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "-0.06m 1.35m 0.26m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "40deg 75deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "-0.06m 1.25m 0.26m",
+            "success_title": "Effectivement, il s’agit bien de l'arrivée en air frais !",
+            "success_description": "L'alimentation en air frais se fait soit par des ouvertures sur la pièce, soit via un conduit dédié. L'air frais est nécessaire à une bonne combustion.",
+            "failed_title": "Eh non, ce n'est pas l’alimentation en air frais !",
+            "failed_description": "L'alimentation en air frais se fait soit par des ouvertures sur la pièce, soit via un conduit dédié. L'air frais est nécessaire à une bonne combustion."
+        },
+        {
+            "hidden_name": "Le circulateur", 
+            "mesh_3d_to_highlight": "boiler-condens-part-7_hl",
+            "viewer_3d_data_position1": "-0.12m 0.81m 0.24m", "comment_data": "-L+R -B+T -B+F",
+            "viewer_3d_data_position2": "-0.12m 0.81m 0.24m",
+            "viewer_3d_data_normal": "0.00m 0.00m 0.10m",
+            "viewer_3d_cam_position": "-25deg 70deg 1.00m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "-0.12m 0.81m 0.24m",
+            "success_title": "Effectivement, il s’agit bien du circulateur !",
+            "success_description": "Le condensateur sert à assurer la circulation du caloporteur à l'intérieur du circtuit de chauffage.",
+            "failed_title": "Eh non, ce n’est pas le circulateur !",
+            "failed_description": "Le condensateur sert à assurer la circulation du caloporteur à l'intérieur du circtuit de chauffage."
+        }
+    ]
+}

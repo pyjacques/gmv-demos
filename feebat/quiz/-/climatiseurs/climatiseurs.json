@@ -1,0 +1,16 @@
+{
+    "main_ui": {
+        "experience_title": "Les différents climatiseurs",
+        "experience_description": "Valide tes connaissances entre ces différents climatiseurs.",
+        "btn_explore": "Explorer",
+        "main_page_step_1": "Sélectionne un premier climatiseur à explorer:",
+        "main_page_step_2": "Sélectionne le second climatiseur à explorer:",
+        "main_page_step_3": "Félicitations, tu sais maintenant différencier ces types de climatiseurs ! Tu peux fermer cette activité et reprendre ton cours."
+    },
+    "products": [
+        {
+            "name": "Climatisateur de type 'Split'",
+            "slug": "split"
+        }
+    ]
+}

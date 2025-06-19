@@ -1,0 +1,21 @@
+{
+    "main_ui": {
+        "experience_title": "Les différents quiz",
+        "experience_description": "Valide tes connaissances avec des quiz.",
+        "btn_explore": "Explorer"
+    },
+    "products": [
+        {
+            "name": "Les poêles",
+            "slug": "poeles"
+        },
+        {
+            "name": "Les chaudières",
+            "slug": "chaudieres"
+        },
+        {
+            "name": "Les Climatiseurs",
+            "slug": "climatiseurs"
+        }
+    ]
+}

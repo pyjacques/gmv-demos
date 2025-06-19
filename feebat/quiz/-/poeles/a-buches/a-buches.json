@@ -1,0 +1,86 @@
+
+{
+    "main_ui": {
+        "experience_title": "Le poêle à bûches",
+        "help_btn": "Aide",
+        "help_modal_title": "<strong>Fonctionnement</strong>",
+        "help_modal_text": "Des bûches sont <strong>déposées manuellement</strong> dans le foyer de combustion.</br></br> Le conduit d'alimentation en air frais fait <strong>rentrer l'air neuf favorisant la combustion des bûches</strong>.</br></br> La tirette permet de <strong>régler le débit d’arrivée d’air pour faire varier la puissance thermique fournie par le poêle</strong>.</br></br> Enfin, le conduit permet <strong>d'évacuer les fumées</strong>.",
+        "initial_1_modal_text": "Tu peux pivoter autour du modèle 3D, zoomer et dézoomer. Depuis un smartphone, tu peux aussi visualiser le poêle en réalité augmentée : si ton smartphone est compatible avec cette technologie, un cube apparaitra en bas à droite de ton écran.",
+        "initial_2_modal_text": "Ce poêle est composé de plusieurs parties. Tu peux accéder à la vue éclatée en appuyant sur le bouton avec cet icône, situé en haut à gauche.",
+        "initial_3_modal_text": "Pour suivre ta progression, une barre avec des coeurs en bas de l'écran se remplira à chaque bonne réponse fournie !",
+        "initial_4_modal_text": "<strong>Ta mission</strong></br>Identifier certains éléments clés du poêle en cliquant sur les zones d’interaction. À chaque bonne réponse, un point est gagné !",
+        "felicitation_modal_title": "Félicitations !",
+        "felicitation_modal_text": "Tu as exploré toutes les zones de l'expérience.",
+        "felicitation_modal_leave_btn": "Retour au choix des poêles",
+        "understood": "Compris >",
+        "letsbegin": "Commençons !",
+        "ok": "OK",
+        "validate": "Valider",
+        "close": "Fermer",
+        "retry": "Rééssayer",
+        "element_question": "De quel élément s’agit-il ?",
+        "choose_answer": "Choisis une réponse",
+        "good_answer": "Bonne réponse !",
+        "bad_answer": "Mauvaise réponse."
+    },
+    "settings": {
+        "experience_title": true,
+        "interactive_hot_spots_visible_labels": true,
+        "default_viewer_3d_cam_position": "-45deg 80deg auto",
+        "default_viewer_3d_cam_target": "0.00m 0.65m 0.00m"
+    },
+    "interactive_hot_spots": [
+        {
+            "hidden_name": "Le foyer",
+            "mesh_3d_to_highlight": "p2_part_1.0_foyer_hl",
+            "viewer_3d_data_position1": "-0.00m 0.55m 0.15m", "comment_data": "-L+R -B+T -B+F",   
+            "viewer_3d_data_position2": "-0.00m 0.55m 0.35m",
+            "viewer_3d_data_normal": "0.00m 1.00m 0.00m",
+            "viewer_3d_cam_position": "55deg 65deg 1m", "comment_cam": "-L+R -B+T DIST",
+            "viewer_3d_cam_target": "-0.00m 0.65m 0.35m",
+            "success_title": "Effectivement, il s’agit bien du foyer !",
+            "success_description": "C’est ici que sont déposées et que vont se consumer les bûches.",
+            "failed_title": "Eh non, ce n’est pas le foyer !",
+            "failed_description": "Le foyer est la partie du poêle où sont déposées les bûches. C’est ici que la combustion se déroule."
+        },
+        {
+            "hidden_name": "Le conduit d’évacuation des fumées",
+            "mesh_3d_to_highlight": "p2_part_5_evac_hl",
+            "viewer_3d_data_position1": "-0.07m 1.20m -0.08m",   
+            "viewer_3d_data_position2": "-0.07m 1.20m -0.08m", 
+            "viewer_3d_data_normal": "0.00m 0.00m 1.00m",
+            "viewer_3d_cam_position": "-100deg 75deg 1m",
+            "viewer_3d_cam_target": "-0.07m 1.20m -0.08m", 
+            "success_title": "Effectivement, il s’agit bien du conduit d’évacuation des fumées !",
+            "success_description": "Le conduit d’évacuation des fumées se situe entre le poêle et le plafond ou le mur. Il est généralement en acier rigide.",
+            "failed_title": "Eh non, ce n’est pas le conduit d’évacuation de fumée !",
+            "failed_description": "Le conduit d’évacuation des fumées se situe entre le poêle et le plafond ou le mur. Il est généralement en acier rigide."
+        },
+        {
+            "hidden_name": "Les tirettes de réglage air comburant",
+            "mesh_3d_to_highlight": "p2_part_4.1_tir_hl",
+            "viewer_3d_data_position1": "-0.15m 0.18m -0.20m", 
+            "viewer_3d_data_position2": "-0.15m 0.18m -0.31m",
+            "viewer_3d_data_normal": "0.00m 0.00m 1.00m",
+            "viewer_3d_cam_position": "-205deg 90deg 1m",
+            "viewer_3d_cam_target": "-0.15m 0.18m -0.31m",
+            "success_title": "Effectivement, il s’agit bien des tirettes de réglage air comburant !",
+            "success_description": "Les tirettes de réglage d’air comburant se situent généralement sous le foyer ou sur les cotés. Les tirettes permettent de contrôler l’entrée d’air et donc l’intensité de la combustion.",
+            "failed_title": "Eh non, ce ne sont pas les tirettes de réglage d’air comburant !",
+            "failed_description": "Les tirettes de réglage d’air comburant se situent généralement sous le foyer ou sur les cotés. Les tirettes permettent de contrôler l’entrée d’air et donc l’intensité de la combustion."
+        },
+        {
+            "hidden_name": "L’alimentation en air frais",
+            "mesh_3d_to_highlight": "p2_part_4.0_alim_hl",
+            "viewer_3d_data_position1": "-0.04m 0.15m -0.25",  
+            "viewer_3d_data_position2": "-0.04m 0.15m -0.36",
+            "viewer_3d_data_normal": "0.00m 0.00m 1.00m",
+            "viewer_3d_cam_position": "120deg 85deg 1m",
+            "viewer_3d_cam_target": "-0.04m 0.15m -0.36",
+            "success_title": "Effectivement, il s’agit bien de l’alimentation en air frais !",
+            "success_description": "L’air frais est nécessaire à une bonne combustion.",
+            "failed_title": "Eh non, ce n’est pas l’alimentation en air frais !",
+            "failed_description": "L’alimentation en air frais se fait généralement via un conduit dédié, situé à l’arrière du poêle. L’air frais est nécessaire à une bonne combustion."
+        }
+    ]
+}

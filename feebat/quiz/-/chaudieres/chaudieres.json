@@ -1,0 +1,20 @@
+{
+    "main_ui": {
+        "experience_title": "Les différentes chaudières",
+        "experience_description": "Valide tes connaissances entre ces deux types différents de chaudières de chauffage.",
+        "btn_explore": "Explorer",
+        "main_page_step_1": "Sélectionne une première chaudière à explorer:",
+        "main_page_step_2": "Sélectionne la seconde chaudière à explorer:",
+        "main_page_step_3": "Félicitations, tu sais maintenant différencier ces deux types de chaudières ! Tu peux fermer cette activité et reprendre ton cours."
+    },
+    "products": [
+        {
+            "name": "La chaudière à condensation",
+            "slug": "a-condensation"
+        },
+        {
+            "name": "La chaudière à granulés",
+            "slug": "a-granules"
+        }
+    ]
+}

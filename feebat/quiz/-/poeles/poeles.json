@@ -1,0 +1,20 @@
+{
+    "main_ui": {
+        "experience_title": "Les différents poêles à bois",
+        "experience_description": "Valide tes connaissances en identifiant les éléments clés de ces deux types de poêles de chauffage.",
+        "btn_explore": "Explorer",
+        "main_page_step_1": "Sélectionne un premier poêle à explorer:",
+        "main_page_step_2": "Sélectionne le second poêle à explorer:",
+        "main_page_step_3": "Félicitations, tu sais maintenant différencier ces deux types de poêles ! Tu peux fermer cette activité et reprendre ton cours"
+    },
+    "products": [
+        {
+            "name": "Le poêle à bûches",
+            "slug": "a-buches"
+        },
+        {
+            "name": "Le poêle à granulés",
+            "slug": "a-granules"
+        }
+    ]
+}
