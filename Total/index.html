@@ -15,6 +15,42 @@
     <!-- Full page viewer -->
     <full-page id="full-page"></full-page>
 
+    <!-- Info button -->
+    <div class="position-absolute top-0 start-0 p-3">
+      <button type="button" class="btn btn-primary text-light fs-3" id="info-btn">
+        <span data-bs-toggle="tooltip" data-bs-placement="right" title="Informations">
+          <i class="bi bi-info-circle"></i>
+        </span>
+      </button>
+    </div>
+
+    <!-- Modals -->
+    <modals id="modals">
+      <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="infoModalLabel">Informations</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12 my-2">
+                    <p class="text-primary fs-5">Aide</p>
+                    <p>Utilisez la souris pour manipuler le modèle 3D.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer p-1">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </modals>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@google/model-viewer@1.11.1/dist/model-viewer-umd.min.js" crossorigin="anonymous"></script>
     <script src="js/viewer.js"></script>

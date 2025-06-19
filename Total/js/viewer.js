@@ -23,6 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
       </button>
     </anim-button>
   </viewer-container>`;
+
+  const infoBtn = document.getElementById('info-btn');
+  if (infoBtn) {
+    infoBtn.addEventListener('click', () => {
+      const infoModalEl = document.getElementById('infoModal');
+      if (infoModalEl) {
+        const modal = new bootstrap.Modal(infoModalEl);
+        modal.show();
+      }
+    });
+  }
 });
 
 async function separateView() {
