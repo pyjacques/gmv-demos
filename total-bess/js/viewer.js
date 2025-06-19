@@ -161,6 +161,20 @@ function initUI() {
       }
     });
   }
+
+  const okBtn = document.getElementById('modal-ok-btn');
+  if (okBtn) {
+    okBtn.addEventListener('click', () => {
+      okBtn.blur();
+      const infoModalEl = document.getElementById('infoModal');
+      if (infoModalEl) {
+        const infoInstance =
+          bootstrap.Modal.getInstance(infoModalEl) ||
+          new bootstrap.Modal(infoModalEl);
+        infoInstance.hide();
+      }
+    });
+  }
 }
 
 function setupLoadListener() {
