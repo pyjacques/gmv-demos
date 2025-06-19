@@ -1,0 +1,14 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Archives
+*.zip
+*.tar
+
+# Node and other package directories
+node_modules/
+
+# Additional package directories
+bower_components/
+vendor/
