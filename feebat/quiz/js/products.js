@@ -11,15 +11,13 @@ console.log('*** VERY-UP/FEE-BAT: '+product)
 $(document).ready(function () {
   //// get json data
   let jsonData
-  let httpRequest = new XMLHttpRequest()
-  httpRequest.open('GET', product+'.json', true)
-  httpRequest.send()
-  httpRequest.addEventListener('readystatechange', function () {
-    if (this.readyState === this.DONE) {
-      jsonData = JSON.parse(this.response)
+  fetch(product + '.json')
+    .then((response) => response.json())
+    .then((data) => {
+      jsonData = data
       processJsonData()
-    }
-  })
+    })
+    .catch((err) => console.error('Failed to load JSON:', err))
 
   //// process json data
   function processJsonData() {

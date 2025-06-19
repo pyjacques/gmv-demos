@@ -8,16 +8,14 @@ console.log('*** VERY-UP/FEE-BAT: QUIZ INDEX')
 $(document).ready(function () {
   //// get json data
   let jsonData
-  let httpRequest = new XMLHttpRequest()
-  httpRequest.open('GET', 'main.json', true)
-  httpRequest.send()
-  httpRequest.addEventListener('readystatechange', function () {
-    if (this.readyState === this.DONE) {
-      jsonData = JSON.parse(this.response)
+  fetch('main.json')
+    .then((response) => response.json())
+    .then((data) => {
+      jsonData = data
       processJsonData()
       console.log(jsonData)
-    }
-  })
+    })
+    .catch((err) => console.error('Failed to load JSON:', err))
 
   //// process json data
   function processJsonData() {
