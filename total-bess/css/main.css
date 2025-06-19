@@ -1,9 +1,9 @@
-/* $primary:#008c78; */
-/* $secondary:#007463; */
+/* $primary:#0066b3; */
+/* $secondary:#00b2a9; */
 /* $success:#00ccad; */
-/* $danger:#fb6d51; */
+/* $danger:#ff8c00; */
 /* $info:#A2D5F2; */
-/* $warning:#e7c01f; */
+/* $warning:#ffed00; */
 /* $light:#FAFAFA; */
 /* $dark:#4e4e4e; */
 
@@ -18,7 +18,7 @@
 }
 
 #overlay {
-  background-color: #008c78;
+  background-color: #0066b3;
 }
 
 .loader,
@@ -160,9 +160,9 @@ button.disabled {
   border-radius: 12px !important;
   border: 1px !important;
   border-style: solid !important;
-  border-color: #008c78 !important;
+  border-color: #0066b3 !important;
   background-color: white !important;
-  color: #008c78 !important;
+  color: #0066b3 !important;
 }
 
 @-webkit-keyframes morphing-hotspot {
@@ -284,15 +284,15 @@ button.disabled {
 .hotspot.active .hotspot-icon,
 .zoneHotSpot.active .hotspot-icon {
   opacity: 100% !important;
-  color: #e7c01f !important;
+  color: #ffed00 !important;
 }
 
 .accordion-button.active {
-  background-color: #e7bf1f70 !important;
+  background-color: #ffed0070 !important;
 }
 
 .zoneHotSpot.active .badge {
-  background-color: #e7bf1f !important;
+  background-color: #ffed00 !important;
 }
 
 .progress-container {
@@ -302,7 +302,7 @@ button.disabled {
   display: block;
 }
 .progress-bar {
-  background-color: #008c78;
+  background-color: #0066b3;
   width: 0%;
   display: block;
   height: inherit;
@@ -400,7 +400,7 @@ bottom-centered-progress {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #e7c01f;
+  background: #ffed00;
   margin-bottom: 6px;
   padding-top: 6px;
   content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/></svg>');
@@ -457,13 +457,13 @@ bottom-centered-progress {
 }
 
 .stepper-item.completed .step-counter {
-  background-color: #e7c01f;
+  background-color: #ffed00;
 }
 
 .stepper-item.completed::after {
   position: absolute;
   content: '';
-  border-bottom: 12px solid #008c78;
+  border-bottom: 12px solid #0066b3;
   width: 100%;
   top: 15px;
   left: 50%;
@@ -506,24 +506,24 @@ bottom-centered-progress {
 }
 
 .welcome-gradient {
-  background: linear-gradient(to bottom, #00D2A8, #0096E6);
+  background: linear-gradient(to bottom, #00b2a9, #0066b3);
 }
 
 .text-darkblue {
-  color: #003366;
+  color: #0066b3;
 }
 
 .btn-start {
   border-radius: 30px;
   background-color: #ffffff;
-  color: #003366;
+  color: #0066b3;
   border: none;
 }
 
 /* Drag & drop labels */
 .draggable-label {
   padding: 6px 12px;
-  background-color: #008c78;
+  background-color: #0066b3;
   color: #fff;
   border-radius: 12px;
   cursor: grab;
@@ -535,5 +535,5 @@ bottom-centered-progress {
 }
 
 .zoneHotSpot.drop-target {
-  outline: 2px dashed #00d2a8;
+  outline: 2px dashed #00b2a9;
 }
