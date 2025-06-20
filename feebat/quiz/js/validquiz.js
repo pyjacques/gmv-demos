@@ -1,4 +1,5 @@
 //// Custom 3D viewer for VERY-UP/FEE-BAT by Pierre-Yves JACQUES (https://pierreyves.fr)
+//// NOTE: This archived file is kept for reference only. Do not modify.
 'use strict'
 
 var loc = window.location.pathname
@@ -797,13 +798,6 @@ $(document).ready(function () {
     console.log('cameraTarget: ' + x + ' ' + y + ' ' + z)
   })
 
-  // Clean up any remaining modal backdrop when a modal is fully hidden
-  $('body').on('hidden.bs.modal', '.modal', function () {
-    if ($('.modal.show').length === 0) {
-      $('body').removeClass('modal-open')
-      $('.modal-backdrop').remove()
-    }
-  })
 
   //// display explainations at start
   setTimeout(function () {
