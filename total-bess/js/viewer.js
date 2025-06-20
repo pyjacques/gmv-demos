@@ -8,6 +8,8 @@ let uiText = {};
 let currentLang = 'en';
 let isExploded = false;
 
+console.log('*** VERY-UP/TOTAL BESS CONTAINER ***')
+
 function detectLang() {
   const navLang = navigator.language || navigator.userLanguage || 'en';
   return navLang.toLowerCase().startsWith('fr') ? 'fr' : 'en';
@@ -33,79 +35,6 @@ function setupLangToggle() {
 function updateLangButton() {
   const btn = document.getElementById('lang-toggle');
   if (btn) btn.textContent = currentLang === 'fr' ? 'EN' : 'FR';
-}
-
-function updateUIText() {
-  document.documentElement.lang = currentLang;
-  if (uiText.page_title) document.title = uiText.page_title;
-
-  const modelViewer = document.getElementById('modelViewer');
-  if (modelViewer && uiText.viewer_alt) modelViewer.setAttribute('alt', uiText.viewer_alt);
-
-  const brandLogo = document.getElementById('brand-logo');
-  if (brandLogo && uiText.brand_logo_alt) brandLogo.alt = uiText.brand_logo_alt;
-
-  const tooltipExp = document.getElementById('tooltip-explications');
-  if (tooltipExp && uiText.info_button_tooltip) tooltipExp.setAttribute('title', uiText.info_button_tooltip);
-
-  const tooltipInfo = document.getElementById('tooltip-informations');
-  if (tooltipInfo && uiText.info_tooltip) tooltipInfo.setAttribute('title', uiText.info_tooltip);
-
-  const modalLabel = document.getElementById('infoModalLabel');
-  if (modalLabel && uiText.modal_title) modalLabel.textContent = uiText.modal_title;
-
-  const helpTitle = document.getElementById('modal-help-title');
-  if (helpTitle && uiText.modal_help_title) helpTitle.textContent = uiText.modal_help_title;
-
-  const helpText = document.getElementById('modal-help-text');
-  if (helpText && uiText.modal_help_text) helpText.textContent = uiText.modal_help_text;
-
-  const okBtn = document.getElementById('modal-ok-btn');
-  if (okBtn && uiText.modal_ok) okBtn.textContent = uiText.modal_ok;
-
-  const loader = document.getElementById('loader-text');
-  if (loader && uiText.loader_text) loader.textContent = uiText.loader_text;
-
-  const welcomeLabel = document.getElementById('welcomeModalLabel');
-  if (welcomeLabel && uiText.welcome_title) welcomeLabel.textContent = uiText.welcome_title;
-
-  const bullet1 = document.getElementById('welcome-bullet-1');
-  if (bullet1 && uiText.welcome_bullet_1) bullet1.textContent = uiText.welcome_bullet_1;
-
-  const bullet2 = document.getElementById('welcome-bullet-2');
-  if (bullet2 && uiText.welcome_bullet_2) bullet2.textContent = uiText.welcome_bullet_2;
-
-  const tagline = document.getElementById('welcome-tagline');
-  if (tagline && uiText.welcome_tagline) tagline.textContent = uiText.welcome_tagline;
-
-  const startBtn = document.getElementById('start-btn');
-  if (startBtn && uiText.start_button) startBtn.textContent = uiText.start_button;
-
-  const tutorialTitle = document.getElementById('tutorialModalLabel');
-  if (tutorialTitle && uiText.tutorial_title) tutorialTitle.textContent = uiText.tutorial_title;
-
-  const tutorialText = document.getElementById('tutorial-text');
-  if (tutorialText && uiText.tutorial_text) tutorialText.textContent = uiText.tutorial_text;
-
-  const tutorialBtn = document.getElementById('tutorial-close-btn');
-  if (tutorialBtn && uiText.tutorial_button) tutorialBtn.textContent = uiText.tutorial_button;
-
-  updateAnimButton();
-  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((el) => new bootstrap.Tooltip(el));
-}
-
-function updateAnimButton() {
-  const container = document.getElementById('anim-button');
-  if (!container) return;
-  if (isExploded) {
-    container.innerHTML = `<button type="button" class="btn btn-primary text-light fs-3" onclick="initialView()">
-        <span data-bs-toggle="tooltip" data-bs-placement="right" title="${uiText.initial_view_tooltip || 'initial-view'}"><i class="bi bi-box"></i></span>
-    </button>`;
-  } else {
-    container.innerHTML = `<button type="button" class="btn btn-primary text-light fs-3" onclick="separateView()">
-        <span id="tooltip-separate-view" data-bs-toggle="tooltip" data-bs-placement="right" title="${uiText.separate_view_tooltip || 'separate-view'}"><i class="bi bi-layers-half"></i></span>
-    </button>`;
-  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -228,24 +157,44 @@ function setupModals() {
   }
 }
 
+//// In/Out animations
 async function separateView() {
-  const modelViewer = document.querySelector('#modelViewer');
-  if (!modelViewer) return;
-  modelViewer.animationName = 'Explode';
-  await modelViewer.updateComplete;
-  modelViewer.timeScale = 1;
-  await modelViewer.play({ repetitions: 1 });
-  isExploded = true;
-  updateAnimButton();
+  separatedView = true
+  await updateHotspotPosition(2)
+  modelViewer.animationName = 'Explode'
+  await modelViewer.updateComplete
+  modelViewer.timeScale = 1
+  await modelViewer.play({ repetitions: 1 })
+  $('#anim-button').html(
+    `<button type="button" class="btn btn-primary text-light fs-3" onclick="initialView()"> 
+        <span data-bs-toggle="tooltip" data-bs-placement="right" title="initial-view"><i class="bi bi-box"></i></span>
+    </button>`
+  )
+}
+async function initialView() {
+  separatedView = false
+  await updateHotspotPosition(1)
+  modelViewer.animationName = 'Mount'
+  await modelViewer.updateComplete
+  modelViewer.timeScale = 1 //OR -1  for reverse
+  await modelViewer.play({ repetitions: 1 })
+  $('#anim-button').html(
+    `<button type="button" class="btn btn-primary text-light fs-3" onclick="separateView()"> 
+        <span data-bs-toggle="tooltip" data-bs-placement="right" title="separate-view"><i class="bi bi-layers"></i></span>
+    </button>`
+  )
 }
 
-async function initialView() {
-  const modelViewer = document.querySelector('#modelViewer');
-  if (!modelViewer) return;
-  modelViewer.animationName = 'Mount';
-  await modelViewer.updateComplete;
-  modelViewer.timeScale = 1;
-  await modelViewer.play({ repetitions: 1 });
-  isExploded = false;
-  updateAnimButton();
+function updateHotspotPosition(posNum) {
+  for (let i = 0; i < jsonData.interactive_hot_spots.length; i++) {
+    if (posNum == 1) {
+      var newPosition = `${jsonData.interactive_hot_spots[i].viewer_3d_data_position1}`
+    } else {
+      var newPosition = `${jsonData.interactive_hot_spots[i].viewer_3d_data_position2}`
+    }
+    modelViewer.updateHotspot({
+      name: `hotspot-hs-${i}`,
+      position: newPosition
+    })
+  }
 }
