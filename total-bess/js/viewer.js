@@ -18,11 +18,15 @@ function detectLang() {
 }
 
 function applyLanguage(lang) {
-  uiText = uiData[lang] || {};
+  const langData = uiData[lang] || {};
+  uiText = langData.main_ui || {};
+  jsonData = langData;
   currentLang = lang;
   updateUIText();
   refreshTooltips();
   updateLangButton();
+  // reposition hotspots when language changes
+  updateHotspotPosition(isExploded ? 2 : 1);
 }
 
 function setupLangToggle() {
@@ -130,6 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
 function initUI() {
   const container = document.getElementById('full-page');
   if (!container) return;
+  const spots = uiData[currentLang].interactive_hot_spots || [];
+  const hotspotsMarkup = spots
+    .map(
+      (s, i) =>
+        `<div id="zone${i + 1}" class="zoneHotSpot" slot="hotspot-zone${i + 1}" data-position="${s.viewer_3d_data_position1}" data-normal="${s.viewer_3d_data_normal || '0 0 1'}"></div>`
+    )
+    .join('\n');
+
   container.innerHTML = `
   <viewer-container>
     <model-viewer id="modelViewer"
@@ -142,9 +154,7 @@ function initUI() {
       exposure="1"
       shadow-intensity="1"
       shadow-softness="1">
-      <div id="zone1" class="zoneHotSpot" slot="hotspot-zone1" data-position="0 0 0.5" data-normal="0 0 1"></div>
-      <div id="zone2" class="zoneHotSpot" slot="hotspot-zone2" data-position="0.5 0 0.5" data-normal="0 0 1"></div>
-      <div id="zone3" class="zoneHotSpot" slot="hotspot-zone3" data-position="-0.5 0 0.5" data-normal="0 0 1"></div>
+      ${hotspotsMarkup}
     </model-viewer>
   </viewer-container>`;
   modelViewer = document.getElementById('modelViewer');
@@ -258,16 +268,14 @@ async function initialView() {
 }
 
 function updateHotspotPosition(posNum) {
-  if (!modelViewer || !Array.isArray(jsonData.interactive_hot_spots)) return;
-  for (let i = 0; i < jsonData.interactive_hot_spots.length; i++) {
-    if (posNum == 1) {
-      var newPosition = `${jsonData.interactive_hot_spots[i].viewer_3d_data_position1}`
-    } else {
-      var newPosition = `${jsonData.interactive_hot_spots[i].viewer_3d_data_position2}`
-    }
+  if (!modelViewer) return;
+  const spots = uiData[currentLang].interactive_hot_spots || [];
+  spots.forEach((spot, i) => {
+    const pos = posNum === 1 ? spot.viewer_3d_data_position1
+                             : spot.viewer_3d_data_position2;
     modelViewer.updateHotspot({
       name: `hotspot-hs-${i}`,
-      position: newPosition
-    })
-  }
+      position: pos,
+    });
+  });
 }
