@@ -21,6 +21,7 @@ function applyLanguage(lang) {
   uiText = uiData[lang] || {};
   currentLang = lang;
   updateUIText();
+  refreshTooltips();
   updateLangButton();
 }
 
@@ -40,6 +41,18 @@ function updateLangButton() {
   const enClass = currentLang === 'en' ? 'active' : 'inactive';
   const frClass = currentLang === 'fr' ? 'active' : 'inactive';
   btn.innerHTML = `<span class="${enClass}">EN</span>-<span class="${frClass}">FR</span>`;
+}
+
+function refreshTooltips() {
+  const tooltipEls = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  tooltipEls.forEach((el) => {
+    const instance = bootstrap.Tooltip.getInstance(el);
+    if (instance) {
+      instance.setContent({ '.tooltip-inner': el.getAttribute('title') });
+    } else {
+      new bootstrap.Tooltip(el);
+    }
+  });
 }
 
 function updateUIText() {
@@ -74,6 +87,9 @@ function updateUIText() {
     tutorialModalLabel: uiText.tutorial_title,
     'tutorial-text': uiText.tutorial_text,
     'tutorial-close-btn': uiText.tutorial_button,
+    label1: uiText.label_cell,
+    label2: uiText.label_module,
+    label3: uiText.label_rack,
   };
 
   Object.entries(texts).forEach(([id, value]) => {
