@@ -32,21 +32,25 @@ function applyLanguage(lang) {
 }
 
 function setupLangToggle() {
-  const btn = document.getElementById('lang-toggle');
-  if (!btn) return;
-  btn.addEventListener('click', () => {
-    const newLang = currentLang === 'fr' ? 'en' : 'fr';
+  const toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  toggle.addEventListener('change', () => {
+    const newLang = toggle.checked ? 'en' : 'fr';
     applyLanguage(newLang);
   });
   updateLangButton();
 }
 
 function updateLangButton() {
-  const btn = document.getElementById('lang-toggle');
-  if (!btn) return;
-  const enClass = currentLang === 'en' ? 'active' : 'inactive';
-  const frClass = currentLang === 'fr' ? 'active' : 'inactive';
-  btn.innerHTML = `<span class="${enClass}">EN</span>-<span class="${frClass}">FR</span>`;
+  const toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  toggle.checked = currentLang === 'en';
+  const label = document.querySelector("label[for='lang-toggle']");
+  if (label) {
+    const enClass = currentLang === 'en' ? 'active' : 'inactive';
+    const frClass = currentLang === 'fr' ? 'active' : 'inactive';
+    label.innerHTML = `<span class="${enClass}">EN</span>-<span class="${frClass}">FR</span>`;
+  }
 }
 
 function refreshTooltips() {
