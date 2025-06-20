@@ -110,6 +110,57 @@ function updateUIText() {
   }
 }
 
+function createIntroModals(text) {
+  const container = document.getElementById('modals');
+  if (!container || !text) return;
+  container.innerHTML = `
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="infoModalLabel">${text.modal_title}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12 my-2">
+                  <p id="modal-help-title" class="text-primary fs-5">${text.modal_help_title}</p>
+                  <p id="modal-help-text">${text.modal_help_text}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer p-1">
+            <button id="modal-ok-btn" type="button" class="btn btn-secondary">${text.modal_ok}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content welcome-gradient text-center p-4">
+          <h2 id="welcomeModalLabel">${text.welcome_title}</h2>
+          <ul class="text-darkblue mt-3 mb-3">
+            <li id="welcome-bullet-1">${text.welcome_bullet_1}</li>
+            <li id="welcome-bullet-2">${text.welcome_bullet_2}</li>
+          </ul>
+          <p id="welcome-tagline" class="fst-italic">${text.welcome_tagline}</p>
+          <button id="start-btn" class="btn btn-start mt-3">${text.start_button}</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="tutorialModal" tabindex="-1" aria-labelledby="tutorialModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+          <h5 id="tutorialModalLabel" class="mb-3">${text.tutorial_title}</h5>
+          <p id="tutorial-text">${text.tutorial_text}</p>
+          <button id="tutorial-close-btn" class="btn btn-primary">${text.tutorial_button}</button>
+        </div>
+      </div>
+    </div>`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   fetch('main.json')
     .then((response) => response.json())
@@ -117,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
       uiData = data;
       currentLang = detectLang();
       applyLanguage(currentLang);
+      createIntroModals(uiText);
       initUI();
       setupLoadListener();
       setupLangToggle();
@@ -125,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Failed to load JSON:', err);
       currentLang = detectLang();
       applyLanguage(currentLang);
+      createIntroModals(uiText);
       initUI();
       setupLoadListener();
       setupLangToggle();

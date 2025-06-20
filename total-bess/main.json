@@ -1,6 +1,5 @@
 {
   "en": {
-
     "main_ui": {
       "page_title": "Total 3D Demo",
       "brand_logo_alt": "TotalEnergies Logo",
@@ -30,6 +29,37 @@
       "default_viewer_3d_cam_position": "0deg 90deg auto",
       "interactive_hot_spots_visible_labels": true
     },
+    "modals": [
+      {
+        "id": "infoModal",
+        "title": "Information",
+        "text": "Use the mouse to manipulate the 3D model.",
+        "icon": "info",
+        "buttons": [
+          { "id": "modal-ok-btn", "text": "OK" }
+        ]
+      },
+      {
+        "id": "welcomeModal",
+        "title": "🦺 Welcome to the BESS demo ✌️",
+        "text": [
+          "View the battery in 3D",
+          "Use the buttons to change the view",
+          "This experience works best on desktop."
+        ],
+        "icon": "flag",
+        "buttons": [
+          { "id": "start-btn", "text": "START" }
+        ]
+      },
+      {
+        "id": "tutorialModal",
+        "title": "How to manipulate the model?",
+        "text": "Use your mouse or finger to rotate and zoom on the battery.",
+        "icon": "mouse",
+        "buttons": [
+          { "id": "tutorial-close-btn", "text": "Let's go!" }
+        ]
     "interactive_hot_spots": [
       {
         "hidden_name": "Cell",
@@ -93,6 +123,37 @@
       "default_viewer_3d_cam_position": "0deg 90deg auto",
       "interactive_hot_spots_visible_labels": true
     },
+     "modals": [
+      {
+        "id": "infoModal",
+        "title": "Informations",
+        "text": "Utilisez la souris pour manipuler le modèle 3D.",
+        "icon": "info",
+        "buttons": [
+          { "id": "modal-ok-btn", "text": "OK" }
+        ]
+      },
+      {
+        "id": "welcomeModal",
+        "title": "🦺 Bienvenue dans la démo BESS ✌️",
+        "text": [
+          "Visualisez la batterie en 3D",
+          "Utilisez les boutons pour changer de vue",
+          "Cette expérience fonctionne mieux sur ordinateur."
+        ],
+        "icon": "flag",
+        "buttons": [
+          { "id": "start-btn", "text": "COMMENCER" }
+        ]
+      },
+      {
+        "id": "tutorialModal",
+        "title": "Comment manipuler le modèle ?",
+        "text": "Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.",
+        "icon": "mouse",
+        "buttons": [
+          { "id": "tutorial-close-btn", "text": "C\u2019est parti !" }
+        ]
     "interactive_hot_spots": [
       {
         "hidden_name": "Cellule",
