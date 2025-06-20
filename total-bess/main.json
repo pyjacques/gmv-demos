@@ -23,7 +23,10 @@
       "tutorial_button": "Let's go!",
       "label_cell": "Cell",
       "label_module": "Module",
-      "label_rack": "Rack"
+      "label_rack": "Rack",
+      "final_title": "\ud83c\udf89 All done!",
+      "final_message": "You have successfully completed this step.",
+      "final_button": "FINISH"
     },
     "settings": {
       "default_viewer_3d_cam_position": "0deg 90deg auto",
@@ -117,7 +120,10 @@
       "tutorial_button": "C\u2019est parti !",
       "label_cell": "Cellule",
       "label_module": "Module",
-      "label_rack": "Rack"
+      "label_rack": "Rack",
+      "final_title": "\ud83c\udf89 C'est termin\u00e9 !",
+      "final_message": "Vous avez identifi\u00e9 tous les él\u00e9ments de s\u00e9curit\u00e9.",
+      "final_button": "Terminer"
     },
     "settings": {
       "default_viewer_3d_cam_position": "0deg 90deg auto",
