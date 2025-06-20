@@ -141,23 +141,35 @@ function createIntroModals(text) {
     </div>
     <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content welcome-gradient text-center p-4">
-          <h2 id="welcomeModalLabel">${text.welcome_title}</h2>
-          <ul class="text-darkblue mt-3 mb-3">
-            <li id="welcome-bullet-1">${text.welcome_bullet_1}</li>
-            <li id="welcome-bullet-2">${text.welcome_bullet_2}</li>
-          </ul>
-          <p id="welcome-tagline" class="fst-italic">${text.welcome_tagline}</p>
-          <button id="start-btn" class="btn btn-start mt-3">${text.start_button}</button>
+        <div class="modal-content text-center">
+          <div class="modal-header justify-content-center">
+            <h5 class="modal-title" id="welcomeModalLabel">${text.welcome_title}</h5>
+          </div>
+          <div class="modal-body p-4">
+            <ul class="text-darkblue mt-3 mb-3">
+              <li id="welcome-bullet-1">${text.welcome_bullet_1}</li>
+              <li id="welcome-bullet-2">${text.welcome_bullet_2}</li>
+            </ul>
+            <p id="welcome-tagline" class="fst-italic">${text.welcome_tagline}</p>
+          </div>
+          <div class="modal-footer justify-content-center p-2">
+            <button id="start-btn" class="btn btn-start">${text.start_button}</button>
+          </div>
         </div>
       </div>
     </div>
     <div class="modal fade" id="tutorialModal" tabindex="-1" aria-labelledby="tutorialModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content text-center p-4">
-          <h5 id="tutorialModalLabel" class="mb-3">${text.tutorial_title}</h5>
-          <p id="tutorial-text">${text.tutorial_text}</p>
-          <button id="tutorial-close-btn" class="btn btn-primary">${text.tutorial_button}</button>
+        <div class="modal-content text-center">
+          <div class="modal-header justify-content-center">
+            <h5 class="modal-title" id="tutorialModalLabel">${text.tutorial_title}</h5>
+          </div>
+          <div class="modal-body p-4">
+            <p id="tutorial-text">${text.tutorial_text}</p>
+          </div>
+          <div class="modal-footer justify-content-center p-2">
+            <button id="tutorial-close-btn" class="btn btn-primary">${text.tutorial_button}</button>
+          </div>
         </div>
       </div>
     </div>`;
