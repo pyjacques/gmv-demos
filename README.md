@@ -23,7 +23,7 @@ L’expérience se découpe en plusieurs écrans interactifs :
 
 - `total-bess/` : Dossier principal du développement en cours (code, assets, UI, animations).
 - `astro/` : **Archive figée** d’anciens éléments de configuration ou d'essais. Ce dossier n’est plus modifiable et est conservé à des fins de référence.
-- `feebat/` : **Archive de travail** issue d’une phase initiale du projet. Elle ne doit pas être modifiée et est uniquement conservée pour consultation.
+- `feebat/` : **Archive de travail** issue d’une phase initiale du projet. Elle ne doit pas être modifiée et est uniquement conservée pour consultation. Les fichiers sont gelés en lecture seule.
 
 ## 📌 Remarques
 

@@ -9,6 +9,8 @@ let currentLang = 'en';
 let isExploded = false;
 let modelViewer;
 let jsonData = { interactive_hot_spots: [] };
+let finalModal;
+let finalDisplayed = false;
 
 console.log('*** VERY-UP/TOTAL BESS CONTAINER ***')
 
@@ -18,10 +20,15 @@ function detectLang() {
 }
 
 function applyLanguage(lang) {
-  uiText = uiData[lang] || {};
+  const langData = uiData[lang] || {};
+  uiText = langData.main_ui || {};
+  jsonData = langData;
   currentLang = lang;
   updateUIText();
+  refreshTooltips();
   updateLangButton();
+  // reposition hotspots when language changes
+  updateHotspotPosition(isExploded ? 2 : 1);
 }
 
 function setupLangToggle() {
@@ -40,6 +47,18 @@ function updateLangButton() {
   const enClass = currentLang === 'en' ? 'active' : 'inactive';
   const frClass = currentLang === 'fr' ? 'active' : 'inactive';
   btn.innerHTML = `<span class="${enClass}">EN</span>-<span class="${frClass}">FR</span>`;
+}
+
+function refreshTooltips() {
+  const tooltipEls = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  tooltipEls.forEach((el) => {
+    const instance = bootstrap.Tooltip.getInstance(el);
+    if (instance) {
+      instance.setContent({ '.tooltip-inner': el.getAttribute('title') });
+    } else {
+      new bootstrap.Tooltip(el);
+    }
+  });
 }
 
 function updateUIText() {
@@ -74,6 +93,9 @@ function updateUIText() {
     tutorialModalLabel: uiText.tutorial_title,
     'tutorial-text': uiText.tutorial_text,
     'tutorial-close-btn': uiText.tutorial_button,
+    label1: uiText.label_cell,
+    label2: uiText.label_module,
+    label3: uiText.label_rack,
   };
 
   Object.entries(texts).forEach(([id, value]) => {
@@ -90,13 +112,72 @@ function updateUIText() {
   }
 }
 
+function createIntroModals(text) {
+  const container = document.getElementById('modals');
+  if (!container || !text) return;
+  container.innerHTML = `
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="infoModalLabel">${text.modal_title}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12 my-2">
+                  <p id="modal-help-title" class="text-primary fs-5">${text.modal_help_title}</p>
+                  <p id="modal-help-text">${text.modal_help_text}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer p-1">
+            <button id="modal-ok-btn" type="button" class="btn btn-secondary">${text.modal_ok}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content welcome-gradient text-center p-4">
+          <h2 id="welcomeModalLabel">${text.welcome_title}</h2>
+          <ul class="text-darkblue mt-3 mb-3">
+            <li id="welcome-bullet-1">${text.welcome_bullet_1}</li>
+            <li id="welcome-bullet-2">${text.welcome_bullet_2}</li>
+          </ul>
+          <p id="welcome-tagline" class="fst-italic">${text.welcome_tagline}</p>
+          <button id="start-btn" class="btn btn-start mt-3">${text.start_button}</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="tutorialModal" tabindex="-1" aria-labelledby="tutorialModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+          <h5 id="tutorialModalLabel" class="mb-3">${text.tutorial_title}</h5>
+          <p id="tutorial-text">${text.tutorial_text}</p>
+          <button id="tutorial-close-btn" class="btn btn-primary">${text.tutorial_button}</button>
+        </div>
+      </div>
+    </div>`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Clean up any remaining modal backdrop when a modal is fully hidden
+  $('body').on('hidden.bs.modal', '.modal', function () {
+    if ($('.modal.show').length === 0) {
+      document.body.classList.remove('modal-open');
+      $('.modal-backdrop').remove();
+    }
+  });
   fetch('main.json')
     .then((response) => response.json())
     .then((data) => {
       uiData = data;
       currentLang = detectLang();
       applyLanguage(currentLang);
+      createIntroModals(uiText);
       initUI();
       populateLabels();
       setupLoadListener();
@@ -106,31 +187,44 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Failed to load JSON:', err);
       currentLang = detectLang();
       applyLanguage(currentLang);
+      createIntroModals(uiText);
       initUI();
       populateLabels();
       setupLoadListener();
       setupLangToggle();
     });
+
+  // Ensure body cleanup when multiple modals are used
+  $('body').on('hidden.bs.modal', '.modal', function () {
+    if ($('.modal.show').length === 0) {
+      $('body').removeClass('modal-open');
+      $('.modal-backdrop').remove();
+    }
+  });
 });
 
 function initUI() {
   const container = document.getElementById('full-page');
   if (!container) return;
+  const spots = uiData[currentLang].interactive_hot_spots || [];
+  const hotspotsMarkup = spots
+    .map(
+      (s, i) =>
+        `<div id="zone${i + 1}" class="zoneHotSpot" slot="hotspot-zone${i + 1}" data-position="${s.viewer_3d_data_position1}" data-normal="${s.viewer_3d_data_normal || '0 0 1'}"></div>`
+    )
+    .join('\n');
+
   container.innerHTML = `
   <viewer-container>
     <model-viewer id="modelViewer"
       alt="${uiText.viewer_alt || 'Total BESS model'}"
       src="3Dmodel/V-TOTAL-011.glb"
-      ar
-      ar-modes="webxr scene-viewer quick-look"
       camera-controls
       environment-image="neutral"
       exposure="1"
       shadow-intensity="1"
       shadow-softness="1">
-      <div id="zone1" class="zoneHotSpot" slot="hotspot-zone1" data-position="0 0 0.5" data-normal="0 0 1"></div>
-      <div id="zone2" class="zoneHotSpot" slot="hotspot-zone2" data-position="0.5 0 0.5" data-normal="0 0 1"></div>
-      <div id="zone3" class="zoneHotSpot" slot="hotspot-zone3" data-position="-0.5 0 0.5" data-normal="0 0 1"></div>
+      ${hotspotsMarkup}
     </model-viewer>
   </viewer-container>`;
   modelViewer = document.getElementById('modelViewer');
@@ -261,16 +355,59 @@ async function initialView() {
 }
 
 function updateHotspotPosition(posNum) {
-  if (!modelViewer || !Array.isArray(jsonData.interactive_hot_spots)) return;
-  for (let i = 0; i < jsonData.interactive_hot_spots.length; i++) {
-    if (posNum == 1) {
-      var newPosition = `${jsonData.interactive_hot_spots[i].viewer_3d_data_position1}`
-    } else {
-      var newPosition = `${jsonData.interactive_hot_spots[i].viewer_3d_data_position2}`
-    }
+  if (!modelViewer) return;
+  const spots = jsonData.interactive_hot_spots || [];
+  spots.forEach((spot, i) => {
+    const pos =
+      posNum === 1 ? spot.viewer_3d_data_position1 : spot.viewer_3d_data_position2;
     modelViewer.updateHotspot({
       name: `hotspot-hs-${i}`,
-      position: newPosition
-    })
+      position: pos,
+    });
+  });
+}
+
+function createFinalModal() {
+  const container = document.getElementById('modals') || document.body;
+  const html = `
+    <div class="modal fade" id="finalModal" tabindex="-1" aria-labelledby="finalModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+          <h5 id="finalModalLabel">${uiText.final_title || ''}</h5>
+          <p id="final-text">${uiText.final_message || ''}</p>
+          <button id="final-close-btn" class="btn btn-primary">${uiText.final_button || 'Terminer'}</button>
+        </div>
+      </div>
+    </div>`;
+  container.insertAdjacentHTML('beforeend', html);
+  const modalEl = document.getElementById('finalModal');
+  finalModal = new bootstrap.Modal(modalEl);
+  const closeBtn = document.getElementById('final-close-btn');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      closeBtn.blur();
+      finalModal.hide();
+      if (typeof onFinish === 'function') {
+        onFinish();
+      }
+    });
+  }
+}
+
+function showFinalModal() {
+  if (finalDisplayed) return;
+  if (!finalModal) {
+    createFinalModal();
+  }
+  finalDisplayed = true;
+  finalModal.show();
+}
+
+function checkCompletion() {
+  if (finalDisplayed) return;
+  const zones = document.querySelectorAll('.zoneHotSpot');
+  const allDone = Array.from(zones).every((z) => z.classList.contains('visited'));
+  if (allDone) {
+    showFinalModal();
   }
 }

@@ -1,51 +1,208 @@
 {
   "en": {
-    "page_title": "Total 3D Demo",
-    "brand_logo_alt": "TotalEnergies Logo",
-    "info_button_tooltip": "Help",
-    "separate_view_tooltip": "separate-view",
-    "initial_view_tooltip": "initial-view",
-    "info_tooltip": "Information",
-    "modal_title": "Information",
-    "modal_help_title": "Help",
-    "modal_help_text": "Use the mouse to manipulate the 3D model.",
-    "modal_ok": "OK",
-    "loader_text": "Loading...",
-    "viewer_alt": "Total BESS model",
-    "welcome_title": "\ud83e\udde9 Welcome to the BESS demo \u270c\ufe0f",
-    "welcome_bullet_1": "View the battery in 3D",
-    "welcome_bullet_2": "Use the buttons to change the view",
-    "welcome_tagline": "This experience works best on desktop.",
-    "start_button": "START",
-    "tutorial_title": "How to manipulate the model?",
-    "tutorial_text": "Use your mouse or finger to rotate and zoom on the battery.",
-    "tutorial_button": "Let's go!"
-  },
-  "fr": {
-    "page_title": "Total 3D Demo",
-    "brand_logo_alt": "TotalEnergies Logo",
-    "info_button_tooltip": "Explications",
-    "separate_view_tooltip": "separate-view",
-    "initial_view_tooltip": "initial-view",
-    "info_tooltip": "Informations",
-    "modal_title": "Informations",
-    "modal_help_title": "Aide",
-    "modal_help_text": "Utilisez la souris pour manipuler le modèle 3D.",
-    "modal_ok": "OK",
-    "loader_text": "Chargement...",
-    "viewer_alt": "Total BESS model",
-    "welcome_title": "\ud83e\udde9 Bienvenue dans la d\u00e9mo BESS \u270c\ufe0f",
-    "welcome_bullet_1": "Visualisez la batterie en 3D",
-    "welcome_bullet_2": "Utilisez les boutons pour changer de vue",
-    "welcome_tagline": "Cette exp\u00e9rience fonctionne mieux sur ordinateur.",
-    "start_button": "COMMENCER",
-    "tutorial_title": "Comment manipuler le mod\u00e8le ?",
-    "tutorial_text": "Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.",
-    "tutorial_button": "C\u2019est parti !"
+    "main_ui": {
+      "page_title": "Total 3D Demo",
+      "brand_logo_alt": "TotalEnergies Logo",
+      "info_button_tooltip": "Help",
+      "separate_view_tooltip": "separate-view",
+      "initial_view_tooltip": "initial-view",
+      "info_tooltip": "Information",
+      "modal_title": "Information",
+      "modal_help_title": "Help",
+      "modal_help_text": "Use the mouse to manipulate the 3D model.",
+      "modal_ok": "OK",
+      "loader_text": "Loading...",
+      "viewer_alt": "Total BESS model",
+      "welcome_title": "\ud83e\udde9 Welcome to the BESS demo \u270c\ufe0f",
+      "welcome_bullet_1": "View the battery in 3D",
+      "welcome_bullet_2": "Use the buttons to change the view",
+      "welcome_tagline": "This experience works best on desktop.",
+      "start_button": "START",
+      "tutorial_title": "How to manipulate the model?",
+      "tutorial_text": "Use your mouse or finger to rotate and zoom on the battery.",
+      "tutorial_button": "Let's go!",
+      "label_cell": "Cell",
+      "label_module": "Module",
+      "label_rack": "Rack",
+      "final_title": "\ud83c\udf89 All done!",
+      "final_message": "You have successfully completed this step.",
+      "final_button": "FINISH"
+    },
+    "settings": {
+      "default_viewer_3d_cam_position": "0deg 90deg auto",
+      "interactive_hot_spots_visible_labels": true
+    },
+    "modals": [
+      {
+        "id": "infoModal",
+        "title": "Information",
+        "text": "Use the mouse to manipulate the 3D model.",
+        "icon": "info",
+        "buttons": [
+          { "id": "modal-ok-btn", "text": "OK" }
+        ]
+      },
+      {
+        "id": "welcomeModal",
+        "title": "🦺 Welcome to the BESS demo ✌️",
+        "text": [
+          "View the battery in 3D",
+          "Use the buttons to change the view",
+          "This experience works best on desktop."
+        ],
+        "icon": "flag",
+        "buttons": [
+          { "id": "start-btn", "text": "START" }
+        ]
+      },
+      {
+        "id": "tutorialModal",
+        "title": "How to manipulate the model?",
+        "text": "Use your mouse or finger to rotate and zoom on the battery.",
+        "icon": "mouse",
+        "buttons": [
+          { "id": "tutorial-close-btn", "text": "Let's go!" }
+        ]
+    "interactive_hot_spots": [
+      {
+        "hidden_name": "Cell",
+        "viewer_3d_data_position1": "0 0 0.5",
+        "viewer_3d_data_position2": "0 0 0.8",
+        "viewer_3d_data_normal": "0 0 1",
+        "success_title": "Correct! This is a cell.",
+        "success_description": "Cells are the basic building blocks of the battery.",
+        "failed_title": "Try again",
+        "failed_description": "This part is a cell."
+      },
+      {
+        "hidden_name": "Module",
+        "viewer_3d_data_position1": "0.5 0 0.5",
+        "viewer_3d_data_position2": "0.5 0 0.8",
+        "viewer_3d_data_normal": "0 0 1",
+        "success_title": "Correct! This is a module.",
+        "success_description": "Modules group cells together.",
+        "failed_title": "Try again",
+        "failed_description": "This part is a module."
+      },
+      {
+        "hidden_name": "Rack",
+        "viewer_3d_data_position1": "-0.5 0 0.5",
+        "viewer_3d_data_position2": "-0.5 0 0.8",
+        "viewer_3d_data_normal": "0 0 1",
+        "success_title": "Correct! This is a rack.",
+        "success_description": "Racks hold the modules in place.",
+        "failed_title": "Try again",
+        "failed_description": "This part is a rack."
+      }
+    ]
   },
   "labels": [
-    { "id": "label1", "text": "Cellule" },
+    { "id": "label1", "text": "Cell" },
     { "id": "label2", "text": "Module" },
     { "id": "label3", "text": "Rack" }
   ]
+  },
+  "fr": {
+    "main_ui": {
+      "page_title": "Total 3D Demo",
+      "brand_logo_alt": "TotalEnergies Logo",
+      "info_button_tooltip": "Explications",
+      "separate_view_tooltip": "separate-view",
+      "initial_view_tooltip": "initial-view",
+      "info_tooltip": "Informations",
+      "modal_title": "Informations",
+      "modal_help_title": "Aide",
+      "modal_help_text": "Utilisez la souris pour manipuler le modèle 3D.",
+      "modal_ok": "OK",
+      "loader_text": "Chargement...",
+      "viewer_alt": "Total BESS model",
+      "welcome_title": "\ud83e\udde9 Bienvenue dans la d\u00e9mo BESS \u270c\ufe0f",
+      "welcome_bullet_1": "Visualisez la batterie en 3D",
+      "welcome_bullet_2": "Utilisez les boutons pour changer de vue",
+      "welcome_tagline": "Cette exp\u00e9rience fonctionne mieux sur ordinateur.",
+      "start_button": "COMMENCER",
+      "tutorial_title": "Comment manipuler le mod\u00e8le ?",
+      "tutorial_text": "Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.",
+      "tutorial_button": "C\u2019est parti !",
+      "label_cell": "Cellule",
+      "label_module": "Module",
+      "label_rack": "Rack",
+      "final_title": "\ud83c\udf89 C'est termin\u00e9 !",
+      "final_message": "Vous avez identifi\u00e9 tous les él\u00e9ments de s\u00e9curit\u00e9.",
+      "final_button": "Terminer"
+    },
+    "settings": {
+      "default_viewer_3d_cam_position": "0deg 90deg auto",
+      "interactive_hot_spots_visible_labels": true
+    },
+     "modals": [
+      {
+        "id": "infoModal",
+        "title": "Informations",
+        "text": "Utilisez la souris pour manipuler le modèle 3D.",
+        "icon": "info",
+        "buttons": [
+          { "id": "modal-ok-btn", "text": "OK" }
+        ]
+      },
+      {
+        "id": "welcomeModal",
+        "title": "🦺 Bienvenue dans la démo BESS ✌️",
+        "text": [
+          "Visualisez la batterie en 3D",
+          "Utilisez les boutons pour changer de vue",
+          "Cette expérience fonctionne mieux sur ordinateur."
+        ],
+        "icon": "flag",
+        "buttons": [
+          { "id": "start-btn", "text": "COMMENCER" }
+        ]
+      },
+      {
+        "id": "tutorialModal",
+        "title": "Comment manipuler le modèle ?",
+        "text": "Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.",
+        "icon": "mouse",
+        "buttons": [
+          { "id": "tutorial-close-btn", "text": "C\u2019est parti !" }
+        ]
+    "interactive_hot_spots": [
+      {
+        "hidden_name": "Cellule",
+        "viewer_3d_data_position1": "0 0 0.5",
+        "viewer_3d_data_position2": "0 0 0.8",
+        "viewer_3d_data_normal": "0 0 1",
+        "success_title": "Bien jou\u00e9 ! Il s'agit de la cellule !",
+        "success_description": "Les cellules sont les \u00e9l\u00e9ments de base de la batterie.",
+        "failed_title": "R\u00e9essaie",
+        "failed_description": "Cette partie est la cellule."
+      },
+      {
+        "hidden_name": "Module",
+        "viewer_3d_data_position1": "0.5 0 0.5",
+        "viewer_3d_data_position2": "0.5 0 0.8",
+        "viewer_3d_data_normal": "0 0 1",
+        "success_title": "Bien jou\u00e9 ! Il s'agit du module !",
+        "success_description": "Les modules regroupent les cellules.",
+        "failed_title": "R\u00e9essaie",
+        "failed_description": "Cette partie est le module."
+      },
+      {
+        "hidden_name": "Rack",
+        "viewer_3d_data_position1": "-0.5 0 0.5",
+        "viewer_3d_data_position2": "-0.5 0 0.8",
+        "viewer_3d_data_normal": "0 0 1",
+        "success_title": "Bien jou\u00e9 ! Il s'agit du rack !",
+        "success_description": "Les racks maintiennent les modules en place.",
+        "failed_title": "R\u00e9essaie",
+        "failed_description": "Cette partie est le rack."
+      }
+    ]
+    },
+    "labels": [
+      { "id": "label1", "text": "Cellule" },
+      { "id": "label2", "text": "Module" },
+      { "id": "label3", "text": "Rack" }
+    ]
+  }
 }
