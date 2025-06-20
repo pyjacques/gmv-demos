@@ -179,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
       applyLanguage(currentLang);
       createIntroModals(uiText);
       initUI();
+      populateLabels();
       setupLoadListener();
       setupLangToggle();
     })
@@ -188,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
       applyLanguage(currentLang);
       createIntroModals(uiText);
       initUI();
+      populateLabels();
       setupLoadListener();
       setupLangToggle();
     });
@@ -252,6 +254,23 @@ function initUI() {
       }
     });
   }
+}
+
+function populateLabels() {
+  const container = document.getElementById('labels');
+  if (!container || !Array.isArray(uiData.labels)) return;
+  container.innerHTML = '';
+  uiData.labels.forEach((lbl) => {
+    const div = document.createElement('div');
+    div.id = lbl.id;
+    div.className = 'draggable-label mb-2';
+    div.setAttribute('draggable', 'true');
+    div.textContent = lbl.text;
+    container.appendChild(div);
+    if (window.registerDraggableLabel) {
+      window.registerDraggableLabel(div);
+    }
+  });
 }
 
 function setupLoadListener() {

@@ -96,6 +96,12 @@
       }
     ]
   },
+  "labels": [
+    { "id": "label1", "text": "Cell" },
+    { "id": "label2", "text": "Module" },
+    { "id": "label3", "text": "Rack" }
+  ]
+  },
   "fr": {
     "main_ui": {
       "page_title": "Total 3D Demo",
@@ -191,6 +197,12 @@
         "failed_title": "R\u00e9essaie",
         "failed_description": "Cette partie est le rack."
       }
+    ]
+    },
+    "labels": [
+      { "id": "label1", "text": "Cellule" },
+      { "id": "label2", "text": "Module" },
+      { "id": "label3", "text": "Rack" }
     ]
   }
 }
