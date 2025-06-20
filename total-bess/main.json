@@ -63,6 +63,8 @@
         "buttons": [
           { "id": "tutorial-close-btn", "text": "Let's go!" }
         ]
+      }  
+    ],    
     "interactive_hot_spots": [
       {
         "hidden_name": "Cell",
@@ -94,13 +96,12 @@
         "failed_title": "Try again",
         "failed_description": "This part is a rack."
       }
+    ],
+    "labels": [
+      { "id": "label1", "text": "Cell" },
+      { "id": "label2", "text": "Module" },
+      { "id": "label3", "text": "Rack" }
     ]
-  },
-  "labels": [
-    { "id": "label1", "text": "Cell" },
-    { "id": "label2", "text": "Module" },
-    { "id": "label3", "text": "Rack" }
-  ]
   },
   "fr": {
     "main_ui": {
@@ -135,7 +136,7 @@
       "default_viewer_3d_cam_position": "0deg 90deg auto",
       "interactive_hot_spots_visible_labels": true
     },
-     "modals": [
+    "modals": [
       {
         "id": "infoModal",
         "title": "Informations",
@@ -166,6 +167,8 @@
         "buttons": [
           { "id": "tutorial-close-btn", "text": "C\u2019est parti !" }
         ]
+      }  
+    ],
     "interactive_hot_spots": [
       {
         "hidden_name": "Cellule",
@@ -197,8 +200,7 @@
         "failed_title": "R\u00e9essaie",
         "failed_description": "Cette partie est le rack."
       }
-    ]
-    },
+    ],
     "labels": [
       { "id": "label1", "text": "Cellule" },
       { "id": "label2", "text": "Module" },
