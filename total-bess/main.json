@@ -13,13 +13,13 @@
       "modal_ok": "OK",
       "loader_text": "Loading...",
       "viewer_alt": "Total BESS model",
-      "welcome_title": "\ud83e\udde9 Welcome to the BESS demo \u270c\ufe0f",
-      "welcome_bullet_1": "View the battery in 3D",
-      "welcome_bullet_2": "Use the buttons to change the view",
-      "welcome_tagline": "This experience works best on desktop.",
+      "welcome_title": "WELCOME TO A BATTERY ENERGY STORAGE SITE",
+      "welcome_bullet_1": "Go inside a container to identify the main components of a BESS system...",
+      "welcome_bullet_2": "...before identifying the different elements that guarantee the safety of the BESS system.",
+      "welcome_tagline": "Let's start by identifying the main components of a BESS system. The illustrations you will see are for educational purposes and do not represent real footage. The container and safety barriers are shown as examples.",
       "start_button": "START",
-      "tutorial_title": "How to manipulate the model?",
-      "tutorial_text": "Use your mouse or finger to rotate and zoom on the battery.",
+      "tutorial_title": "Here is the inside and outside view of a container!",
+      "tutorial_text": "You will begin by identifying the different components of a BESS system. To do this, you can more or less explode the container view by scrolling with your mouse.",
       "tutorial_button": "Let's go!",
       "label_cell": "Cell",
       "label_module": "Module",
@@ -44,11 +44,11 @@
       },
       {
         "id": "welcomeModal",
-        "title": "🦺 Welcome to the BESS demo ✌️",
+        "title": "WELCOME TO A BATTERY ENERGY STORAGE SITE",
         "text": [
-          "View the battery in 3D",
-          "Use the buttons to change the view",
-          "This experience works best on desktop."
+          "Go inside a container to identify the main components of a BESS system...",
+          "...before identifying the different elements that guarantee the safety of the BESS system.",
+          "Let's start by identifying the main components of a BESS system. The illustrations you will see are for educational purposes and do not represent real footage. The container and safety barriers are shown as examples."
         ],
         "icon": "flag",
         "buttons": [
@@ -57,8 +57,8 @@
       },
       {
         "id": "tutorialModal",
-        "title": "How to manipulate the model?",
-        "text": "Use your mouse or finger to rotate and zoom on the battery.",
+        "title": "Here is the inside and outside view of a container!",
+        "text": "You will begin by identifying the different components of a BESS system. To do this, you can more or less explode the container view by scrolling with your mouse.",
         "icon": "mouse",
         "buttons": [
           { "id": "tutorial-close-btn", "text": "Let's go!" }
@@ -117,13 +117,13 @@
       "modal_ok": "OK",
       "loader_text": "Chargement...",
       "viewer_alt": "Total BESS model",
-      "welcome_title": "\ud83e\udde9 Bienvenue dans la d\u00e9mo BESS \u270c\ufe0f",
-      "welcome_bullet_1": "Visualisez la batterie en 3D",
-      "welcome_bullet_2": "Utilisez les boutons pour changer de vue",
-      "welcome_tagline": "Cette exp\u00e9rience fonctionne mieux sur ordinateur.",
+      "welcome_title": "BIENVENUE SUR UN SITE DE STOCKAGE D'\u00c9LECTRICIT\u00c9 PAR BATTERIES",
+      "welcome_bullet_1": "Rendez-vous \u00e0 l\u2019int\u00e9rieur d\u2019un container pour identifier les principaux composants d\u2019un syst\u00e8me BESS...",
+      "welcome_bullet_2": "\u2026avant d\u2019identifier les diff\u00e9rents \u00e9l\u00e9ments garantissant la s\u00e9curit\u00e9 du syst\u00e8me BESS.",
+      "welcome_tagline": "Commencez tout d\u2019abord par identifier les principaux composants d\u2019un syst\u00e8me BESS. Les illustrations que vous allez visualiser sont des illustrations \u00e0 vis\u00e9e p\u00e9dagogique et ne repr\u00e9sentent pas des prises de vues r\u00e9elles. Le container, notamment, a une vertu d\u2019exemple ainsi que les barri\u00e8res de s\u00e9curit\u00e9.",
       "start_button": "COMMENCER",
-      "tutorial_title": "Comment manipuler le mod\u00e8le ?",
-      "tutorial_text": "Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.",
+      "tutorial_title": "Voil\u00e0 la vue de l\u2019int\u00e9rieur et de l\u2019ext\u00e9rieur d\u2019un container !",
+      "tutorial_text": "Vous allez commencer par identifier les diff\u00e9rents composants d\u2019un syst\u00e8me BESS. Pour cela, vous pourrez plus ou moins \u00e9clater la vue du container en scrollant avec votre souris.",
       "tutorial_button": "C\u2019est parti !",
       "label_cell": "Cellule",
       "label_module": "Module",
@@ -148,11 +148,11 @@
       },
       {
         "id": "welcomeModal",
-        "title": "🦺 Bienvenue dans la démo BESS ✌️",
+        "title": "BIENVENUE SUR UN SITE DE STOCKAGE D'\u00c9LECTRICIT\u00c9 PAR BATTERIES",
         "text": [
-          "Visualisez la batterie en 3D",
-          "Utilisez les boutons pour changer de vue",
-          "Cette expérience fonctionne mieux sur ordinateur."
+          "Rendez-vous \u00e0 l\u2019int\u00e9rieur d\u2019un container pour identifier les principaux composants d\u2019un syst\u00e8me BESS...",
+          "\u2026avant d\u2019identifier les diff\u00e9rents \u00e9l\u00e9ments garantissant la s\u00e9curit\u00e9 du syst\u00e8me BESS.",
+          "Commencez tout d\u2019abord par identifier les principaux composants d\u2019un syst\u00e8me BESS. Les illustrations que vous allez visualiser sont des illustrations \u00e0 vis\u00e9e p\u00e9dagogique et ne repr\u00e9sentent pas des prises de vues r\u00e9elles. Le container, notamment, a une vertu d\u2019exemple ainsi que les barri\u00e8res de s\u00e9curit\u00e9."
         ],
         "icon": "flag",
         "buttons": [
@@ -161,8 +161,8 @@
       },
       {
         "id": "tutorialModal",
-        "title": "Comment manipuler le modèle ?",
-        "text": "Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.",
+        "title": "Voil\u00e0 la vue de l\u2019int\u00e9rieur et de l\u2019ext\u00e9rieur d\u2019un container !",
+        "text": "Vous allez commencer par identifier les diff\u00e9rents composants d\u2019un syst\u00e8me BESS. Pour cela, vous pourrez plus ou moins \u00e9clater la vue du container en scrollant avec votre souris.",
         "icon": "mouse",
         "buttons": [
           { "id": "tutorial-close-btn", "text": "C\u2019est parti !" }
