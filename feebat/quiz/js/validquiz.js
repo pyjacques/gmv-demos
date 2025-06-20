@@ -797,6 +797,14 @@ $(document).ready(function () {
     console.log('cameraTarget: ' + x + ' ' + y + ' ' + z)
   })
 
+  // Clean up any remaining modal backdrop when a modal is fully hidden
+  $('body').on('hidden.bs.modal', '.modal', function () {
+    if ($('.modal.show').length === 0) {
+      $('body').removeClass('modal-open')
+      $('.modal-backdrop').remove()
+    }
+  })
+
   //// display explainations at start
   setTimeout(function () {
     $('#initialModal1').modal('show') //DEV ON
