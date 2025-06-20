@@ -1,5 +1,6 @@
 {
   "en": {
+
     "main_ui": {
       "page_title": "Total 3D Demo",
       "brand_logo_alt": "TotalEnergies Logo",
@@ -20,7 +21,10 @@
       "start_button": "START",
       "tutorial_title": "How to manipulate the model?",
       "tutorial_text": "Use your mouse or finger to rotate and zoom on the battery.",
-      "tutorial_button": "Let's go!"
+      "tutorial_button": "Let's go!",
+      "label_cell": "Cell",
+      "label_module": "Module",
+      "label_rack": "Rack"
     },
     "settings": {
       "default_viewer_3d_cam_position": "0deg 90deg auto",
@@ -80,7 +84,10 @@
       "start_button": "COMMENCER",
       "tutorial_title": "Comment manipuler le mod\u00e8le ?",
       "tutorial_text": "Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.",
-      "tutorial_button": "C\u2019est parti !"
+      "tutorial_button": "C\u2019est parti !",
+      "label_cell": "Cellule",
+      "label_module": "Module",
+      "label_rack": "Rack"
     },
     "settings": {
       "default_viewer_3d_cam_position": "0deg 90deg auto",
