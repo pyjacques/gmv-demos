@@ -27,12 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
       ev.preventDefault();
       const id = ev.dataTransfer.getData('text/plain');
       const label = document.getElementById(id);
-      if (label) {
-        zone.appendChild(label);
-        zone.classList.remove('drop-target');
-        zone.classList.add('visited');
-        label.setAttribute('draggable', 'false');
-      }
+        if (label) {
+          zone.appendChild(label);
+          zone.classList.remove('drop-target');
+          zone.classList.add('visited');
+          label.setAttribute('draggable', 'false');
+          if (typeof checkCompletion === 'function') {
+            checkCompletion();
+          }
+        }
+      });
     });
   });
-});

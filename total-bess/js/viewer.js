@@ -9,6 +9,8 @@ let currentLang = 'en';
 let isExploded = false;
 let modelViewer;
 let jsonData = { interactive_hot_spots: [] };
+let finalModal;
+let finalDisplayed = false;
 
 console.log('*** VERY-UP/TOTAL BESS CONTAINER ***')
 
@@ -253,5 +255,50 @@ function updateHotspotPosition(posNum) {
       name: `hotspot-hs-${i}`,
       position: newPosition
     })
+  }
+}
+
+function createFinalModal() {
+  const container = document.getElementById('modals') || document.body;
+  const html = `
+    <div class="modal fade" id="finalModal" tabindex="-1" aria-labelledby="finalModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+          <h5 id="finalModalLabel">${uiText.final_title || ''}</h5>
+          <p id="final-text">${uiText.final_message || ''}</p>
+          <button id="final-close-btn" class="btn btn-primary">${uiText.final_button || 'Terminer'}</button>
+        </div>
+      </div>
+    </div>`;
+  container.insertAdjacentHTML('beforeend', html);
+  const modalEl = document.getElementById('finalModal');
+  finalModal = new bootstrap.Modal(modalEl);
+  const closeBtn = document.getElementById('final-close-btn');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      closeBtn.blur();
+      finalModal.hide();
+      if (typeof onFinish === 'function') {
+        onFinish();
+      }
+    });
+  }
+}
+
+function showFinalModal() {
+  if (finalDisplayed) return;
+  if (!finalModal) {
+    createFinalModal();
+  }
+  finalDisplayed = true;
+  finalModal.show();
+}
+
+function checkCompletion() {
+  if (finalDisplayed) return;
+  const zones = document.querySelectorAll('.zoneHotSpot');
+  const allDone = Array.from(zones).every((z) => z.classList.contains('visited'));
+  if (allDone) {
+    showFinalModal();
   }
 }
