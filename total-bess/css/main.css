@@ -412,8 +412,16 @@ bottom-centered-progress {
   transition: visibility 10s, opacity 2s 2s;
 }
 
-.welcome-gradient {
-  background: linear-gradient(to bottom, #00b2a9, #0066b3);
+
+.modal-header {
+  background-color: #0066b3;
+  color: #fff;
+  border-bottom: 2px solid #003366;
+}
+
+.modal-footer {
+  background-color: #003366;
+  border-top: none;
 }
 
 .text-darkblue {
