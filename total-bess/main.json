@@ -42,5 +42,10 @@
     "tutorial_title": "Comment manipuler le mod\u00e8le ?",
     "tutorial_text": "Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.",
     "tutorial_button": "C\u2019est parti !"
-  }
+  },
+  "labels": [
+    { "id": "label1", "text": "Cellule" },
+    { "id": "label2", "text": "Module" },
+    { "id": "label3", "text": "Rack" }
+  ]
 }
