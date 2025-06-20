@@ -182,6 +182,14 @@ document.addEventListener('DOMContentLoaded', () => {
       setupLoadListener();
       setupLangToggle();
     });
+
+  // Ensure body cleanup when multiple modals are used
+  $('body').on('hidden.bs.modal', '.modal', function () {
+    if ($('.modal.show').length === 0) {
+      $('body').removeClass('modal-open');
+      $('.modal-backdrop').remove();
+    }
+  });
 });
 
 function initUI() {
