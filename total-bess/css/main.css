@@ -537,3 +537,8 @@ bottom-centered-progress {
 .zoneHotSpot.drop-target {
   outline: 2px dashed #00b2a9;
 }
+
+/* Language toggle styles */
+#lang-toggle .inactive {
+  color: #d1d1d1;
+}
