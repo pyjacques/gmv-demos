@@ -19,7 +19,40 @@
     "start_button": "START",
     "tutorial_title": "How to manipulate the model?",
     "tutorial_text": "Use your mouse or finger to rotate and zoom on the battery.",
-    "tutorial_button": "Let's go!"
+    "tutorial_button": "Let's go!",
+    "modals": [
+      {
+        "id": "infoModal",
+        "title": "Information",
+        "text": "Use the mouse to manipulate the 3D model.",
+        "icon": "info",
+        "buttons": [
+          { "id": "modal-ok-btn", "text": "OK" }
+        ]
+      },
+      {
+        "id": "welcomeModal",
+        "title": "🦺 Welcome to the BESS demo ✌️",
+        "text": [
+          "View the battery in 3D",
+          "Use the buttons to change the view",
+          "This experience works best on desktop."
+        ],
+        "icon": "flag",
+        "buttons": [
+          { "id": "start-btn", "text": "START" }
+        ]
+      },
+      {
+        "id": "tutorialModal",
+        "title": "How to manipulate the model?",
+        "text": "Use your mouse or finger to rotate and zoom on the battery.",
+        "icon": "mouse",
+        "buttons": [
+          { "id": "tutorial-close-btn", "text": "Let's go!" }
+        ]
+      }
+    ]
   },
   "fr": {
     "page_title": "Total 3D Demo",
@@ -41,6 +74,39 @@
     "start_button": "COMMENCER",
     "tutorial_title": "Comment manipuler le mod\u00e8le ?",
     "tutorial_text": "Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.",
-    "tutorial_button": "C\u2019est parti !"
+    "tutorial_button": "C\u2019est parti !",
+    "modals": [
+      {
+        "id": "infoModal",
+        "title": "Informations",
+        "text": "Utilisez la souris pour manipuler le modèle 3D.",
+        "icon": "info",
+        "buttons": [
+          { "id": "modal-ok-btn", "text": "OK" }
+        ]
+      },
+      {
+        "id": "welcomeModal",
+        "title": "🦺 Bienvenue dans la démo BESS ✌️",
+        "text": [
+          "Visualisez la batterie en 3D",
+          "Utilisez les boutons pour changer de vue",
+          "Cette expérience fonctionne mieux sur ordinateur."
+        ],
+        "icon": "flag",
+        "buttons": [
+          { "id": "start-btn", "text": "COMMENCER" }
+        ]
+      },
+      {
+        "id": "tutorialModal",
+        "title": "Comment manipuler le modèle ?",
+        "text": "Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.",
+        "icon": "mouse",
+        "buttons": [
+          { "id": "tutorial-close-btn", "text": "C\u2019est parti !" }
+        ]
+      }
+    ]
   }
 }
