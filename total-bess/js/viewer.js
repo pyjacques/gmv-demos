@@ -66,16 +66,11 @@ function initUI() {
     <model-viewer id="modelViewer"
       alt="${uiText.viewer_alt || 'Total BESS model'}"
       src="3Dmodel/V-TOTAL-011.glb"
-      ar
-      ar-modes="webxr scene-viewer quick-look"
       camera-controls
       environment-image="neutral"
       exposure="1"
       shadow-intensity="1"
       shadow-softness="1">
-      <div id="zone1" class="zoneHotSpot" slot="hotspot-zone1" data-position="0 0 0.5" data-normal="0 0 1"></div>
-      <div id="zone2" class="zoneHotSpot" slot="hotspot-zone2" data-position="0.5 0 0.5" data-normal="0 0 1"></div>
-      <div id="zone3" class="zoneHotSpot" slot="hotspot-zone3" data-position="-0.5 0 0.5" data-normal="0 0 1"></div>
     </model-viewer>
   </viewer-container>`;
   updateUIText();
