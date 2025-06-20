@@ -337,10 +337,10 @@ async function initialView() {
 
 function updateHotspotPosition(posNum) {
   if (!modelViewer) return;
-  const spots = uiData[currentLang].interactive_hot_spots || [];
+  const spots = jsonData.interactive_hot_spots || [];
   spots.forEach((spot, i) => {
-    const pos = posNum === 1 ? spot.viewer_3d_data_position1
-                             : spot.viewer_3d_data_position2;
+    const pos =
+      posNum === 1 ? spot.viewer_3d_data_position1 : spot.viewer_3d_data_position2;
     modelViewer.updateHotspot({
       name: `hotspot-hs-${i}`,
       position: pos,
