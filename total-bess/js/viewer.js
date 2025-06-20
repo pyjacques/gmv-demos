@@ -7,6 +7,8 @@ let uiData = {};
 let uiText = {};
 let currentLang = 'en';
 let isExploded = false;
+let modelViewer;
+let jsonData = { interactive_hot_spots: [] };
 
 console.log('*** VERY-UP/TOTAL BESS CONTAINER ***')
 
@@ -129,6 +131,7 @@ function initUI() {
       <div id="zone3" class="zoneHotSpot" slot="hotspot-zone3" data-position="-0.5 0 0.5" data-normal="0 0 1"></div>
     </model-viewer>
   </viewer-container>`;
+  modelViewer = document.getElementById('modelViewer');
   updateUIText();
 
   const infoBtn = document.getElementById('info-btn');
@@ -158,7 +161,9 @@ function initUI() {
 }
 
 function setupLoadListener() {
-  const modelViewer = document.getElementById('modelViewer');
+  if (!modelViewer) {
+    modelViewer = document.getElementById('modelViewer');
+  }
   if (!modelViewer) return;
 
   const hideOverlay = () => {
@@ -237,6 +242,7 @@ async function initialView() {
 }
 
 function updateHotspotPosition(posNum) {
+  if (!modelViewer || !Array.isArray(jsonData.interactive_hot_spots)) return;
   for (let i = 0; i < jsonData.interactive_hot_spots.length; i++) {
     if (posNum == 1) {
       var newPosition = `${jsonData.interactive_hot_spots[i].viewer_3d_data_position1}`
