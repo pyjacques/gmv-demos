@@ -95,6 +95,13 @@ function updateUIText() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Clean up any remaining modal backdrop when a modal is fully hidden
+  $('body').on('hidden.bs.modal', '.modal', function () {
+    if ($('.modal.show').length === 0) {
+      document.body.classList.remove('modal-open');
+      $('.modal-backdrop').remove();
+    }
+  });
   fetch('main.json')
     .then((response) => response.json())
     .then((data) => {
