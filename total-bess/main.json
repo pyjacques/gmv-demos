@@ -19,7 +19,11 @@
     "start_button": "START",
     "tutorial_title": "How to manipulate the model?",
     "tutorial_text": "Use your mouse or finger to rotate and zoom on the battery.",
-    "tutorial_button": "Let's go!"
+    "tutorial_button": "Let's go!",
+    "validate_button": "Validate",
+    "correction_title": "Incorrect placement",
+    "correction_text": "Try again.",
+    "correction_button": "OK"
   },
   "fr": {
     "page_title": "Total 3D Demo",
@@ -41,6 +45,15 @@
     "start_button": "COMMENCER",
     "tutorial_title": "Comment manipuler le mod\u00e8le ?",
     "tutorial_text": "Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.",
-    "tutorial_button": "C\u2019est parti !"
+    "tutorial_button": "C\u2019est parti !",
+    "validate_button": "Valider",
+    "correction_title": "Placement incorrect",
+    "correction_text": "Réessayez.",
+    "correction_button": "OK"
+  },
+  "solution": {
+    "zone1": "label1",
+    "zone2": "label2",
+    "zone3": "label3"
   }
 }

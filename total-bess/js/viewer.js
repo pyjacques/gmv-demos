@@ -74,6 +74,10 @@ function updateUIText() {
     tutorialModalLabel: uiText.tutorial_title,
     'tutorial-text': uiText.tutorial_text,
     'tutorial-close-btn': uiText.tutorial_button,
+    'validate-btn': uiText.validate_button,
+    correctionModalLabel: uiText.correction_title,
+    'correction-text': uiText.correction_text,
+    'correction-close-btn': uiText.correction_button,
   };
 
   Object.entries(texts).forEach(([id, value]) => {
@@ -95,19 +99,21 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((response) => response.json())
     .then((data) => {
       uiData = data;
+      window.dragDropSolution = data.solution || {};
       currentLang = detectLang();
       applyLanguage(currentLang);
       initUI();
       setupLoadListener();
       setupLangToggle();
     })
-    .catch((err) => {
-      console.error('Failed to load JSON:', err);
-      currentLang = detectLang();
-      applyLanguage(currentLang);
-      initUI();
-      setupLoadListener();
-      setupLangToggle();
+  .catch((err) => {
+    console.error('Failed to load JSON:', err);
+    window.dragDropSolution = {};
+    currentLang = detectLang();
+    applyLanguage(currentLang);
+    initUI();
+    setupLoadListener();
+    setupLangToggle();
     });
 });
 

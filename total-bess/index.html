@@ -44,6 +44,7 @@
         </div>
 
         <button id="lang-toggle" class="btn btn-primary fs-6"><span class="active">EN</span>-<span class="inactive">FR</span></button>
+        <button id="validate-btn" class="btn btn-success fs-6 mt-2" style="display:none;">Validate</button>
 
       </bottom-left-menu>
       <bottom-centered-progress>
@@ -102,6 +103,18 @@
             <h5 id="tutorialModalLabel" class="mb-3">Comment manipuler le modèle ?</h5>
             <p id="tutorial-text">Utilisez la souris ou votre doigt pour faire pivoter et zoomer sur la batterie.</p>
             <button id="tutorial-close-btn" class="btn btn-primary">C’est parti !</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="correctionModal" tabindex="-1" aria-labelledby="correctionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content text-center p-4">
+            <h5 id="correctionModalLabel">Incorrect placement</h5>
+            <p id="correction-text">Try again.</p>
+            <div id="answer-container" style="display:none;">
+              <p id="answer-text" class="mb-0"></p>
+            </div>
+            <button id="correction-close-btn" class="btn btn-primary mt-3">OK</button>
           </div>
         </div>
       </div>
